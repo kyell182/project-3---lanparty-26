@@ -1,0 +1,10 @@
+- geld inkom
+- info verspreiden
+- deelnemersregistratie
+- bordgames ( spellenlab )
+- caching server steam
+- disclaimer / gedragscode
+- leaderboard / stream
+- eind november 
+- 
+- 
