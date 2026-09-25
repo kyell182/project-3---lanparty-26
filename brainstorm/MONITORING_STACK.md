@@ -86,7 +86,7 @@ volumes:
 
 Om de werking van het netwerk te bewijzen tijdens de Network Experience, dienen de volgende statistieken prominent op het hoofdscherm getoond te worden:
 
-1.  **WAN Internet Doorvoersnelheid:** Live netwerkverkeer (Mbps) op de pfSense WAN-interface om internetbelasting te monitoren.
-2.  **LanCache Hit Rate:** Een taart- of staafdiagram dat de verhouding toont tussen *Cache Hits* (lokaal geserveerd op 1 Gbps+) en *Cache Misses* (gedownload van internet).
-3.  **Core Switch Port Status:** Matrix-overzicht van alle switchpoorten die eventuele pakketfouten (CRC errors) of onverwachte 'flapping ports' direct visueel markeert.
-4.  **ICMP Jitter / Latency:** Realtime ping-metingen naar actieve game-nodes om de stabiliteit van de latency te waarborgen onder hoge netwerkdruk.
+1. **WAN Internet Doorvoersnelheid:** Live netwerkverkeer (Mbps) op de pfSense WAN-interface om internetbelasting te monitoren.
+2. **LanCache Hit Rate:** Een taart- of staafdiagram dat de verhouding toont tussen *Cache Hits* (lokaal geserveerd op 1 Gbps+) en *Cache Misses* (gedownload van internet).
+3. **Core Switch Port Status:** Matrix-overzicht van alle switchpoorten die eventuele pakketfouten (CRC errors) of onverwachte 'flapping ports' direct visueel markeert.
+4. **ICMP Jitter / Latency:** Realtime ping-metingen naar actieve game-nodes om de stabiliteit van de latency te waarborgen onder hoge netwerkdruk.

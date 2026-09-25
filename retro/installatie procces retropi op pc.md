@@ -112,5 +112,3 @@ deze handleiding is bedoeld voor mensen die een pc willen ombouwen naar een arca
     ---
 
 7. na de installatie, herstart de pc en log opnieuw in. Retropi zou nu automatisch moeten starten.
-
-8. 
