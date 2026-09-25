@@ -6,9 +6,10 @@ Gebruik voor `Type` bijvoorbeeld `Beslissing`, `Actie`, `Test`, `Probleem`, `Inc
 
 Voeg waar mogelijk een link naar bewijs toe, zoals een document, screenshot, configuratie zonder geheimen of testresultaat.
 
-| Datum      | Type       | Onderwerp                     | Beschrijving                      | Eigenaar |
-| ---------- | ---------- | ----------------------------- | --------------------------------- | -------- |
-| 2026-09-22 | Beslissing | Projectdocumentatie           | Logboek en checklists toegevoegd. | Kyell    |
-|            |            | eerste brainstorm sessie      | repoklaar gezet                   |          |
-|            |            | hardware bekeken voor retropi | kijken voor arcade kast minipc    |          |
-|            |            | installatie retropi op minipc | handleiding schrijven             |          |
+| Datum      | Type       | Onderwerp                         | Beschrijving                                       | Eigenaar |
+| ---------- | ---------- | --------------------------------- | -------------------------------------------------- | -------- |
+| 2026-09-22 | Beslissing | Projectdocumentatie               | Logboek en checklists toegevoegd.                  | Kyell    |
+|            |            | eerste brainstorm sessie          | repoklaar gezet                                    |          |
+|            |            | hardware bekeken voor retropi     | kijken voor arcade kast minipc                     |          |
+|            |            | installatie retropi op minipc     | handleiding schrijven                              |          |
+| 2026-09-25 | actie      | contact gelegd met meneer calleuw | aanvraag tot geprek rond organisatie van LAN-party | Kyell    |
