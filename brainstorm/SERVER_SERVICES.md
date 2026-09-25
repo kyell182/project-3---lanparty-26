@@ -1,4 +1,4 @@
-# 🛠️ Module 3: Core Server Services & Optimalisatie
+# Module 3: Core Server Services & Optimalisatie
 
 Dit document behandelt de softwarematige inrichting en netwerkaanpassingen om de LAN-party stabiel en performant te houden.
 

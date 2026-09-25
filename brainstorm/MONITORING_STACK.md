@@ -1,4 +1,4 @@
-# 📊 Module 2: Moderne Netwerkmonitoring (Grafana-Stack)
+# Module 2: Moderne Netwerkmonitoring (Grafana-Stack)
 
 Dit document beschrijft de technische opzet van de monitoring-pijplijn om realtime metrieken te verzamelen voor het projectverslag.
 

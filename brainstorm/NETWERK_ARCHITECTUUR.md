@@ -1,4 +1,4 @@
-# 🌐 Module 1: Netwerk Architectuur & Topologie
+#  Module 1: Netwerk Architectuur & Topologie
 
 Dit document beschrijft de fysieke en logische inrichting van de netwerkinfrastructuur om een stabiele gaming-omgeving te garanderen.
 
