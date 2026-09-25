@@ -13,3 +13,4 @@ Voeg waar mogelijk een link naar bewijs toe, zoals een document, screenshot, con
 |            |            | hardware bekeken voor retropi     | kijken voor arcade kast minipc                     |          |
 |            |            | installatie retropi op minipc     | handleiding schrijven                              |          |
 | 2026-09-25 | actie      | contact gelegd met meneer calleuw | aanvraag tot geprek rond organisatie van LAN-party | Kyell    |
+| 2026-09-25 | Actie      | Pico 4 LAN-concept                | Concept en documentatie uitgewerkt voor een lokale Pico 4 LAN-opstelling met Quake3Quest en mogelijke casting. | Jason |
