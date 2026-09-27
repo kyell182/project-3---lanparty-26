@@ -21,14 +21,14 @@ deze handleiding is bedoeld voor mensen die een pc willen ombouwen naar een arca
 
 - retropi image (te instaleren via een script in linux)
 - een image writer software (zoals [**balenaEtcher**](https://etcher.balena.io/#download-etcher)) of een [**Ventoy**](https://sourceforge.net/projects/ventoy/files/) usb stick
-- een linux besturingssysteem [**ubuntu  26.04.1 LTS**](https://ubuntu.com/download/desktop)
+- een linux besturingssysteem [**ubuntu  24.04.5.1 LTS**](https://releases.ubuntu.com/noble/ubuntu-24.04.5.1-desktop-amd64.iso)
 - een terminal emulator (zoals putty of de ingebouwde terminal in linux)
 
 ### instalatie
 
 [instalatie gids retropi op linux](https://retropie.org.uk/docs/Debian/)
 
-1. installeer de linux distributie op de pc (bijvoorbeeld ubuntu 26.04.1 LTS) en zorg dat deze up-to-date is.
+1. installeer de linux distributie op de pc (bijvoorbeeld ubuntu 24.04.5.1 LTS) en zorg dat deze up-to-date is.
 
     ```bash
     sudo apt update && sudo apt upgrade -y
@@ -111,4 +111,10 @@ deze handleiding is bedoeld voor mensen die een pc willen ombouwen naar een arca
 
     ---
 
-7. na de installatie, herstart de pc en log opnieuw in. Retropi zou nu automatisch moeten starten.
+7. na de installatie, ga naar config/tools daarna naar autostart en daar moet je dit enabelen herstart de pc en log opnieuw in. Retropi zou nu automatisch moeten starten.
+
+---
+
+## inloggegevens
+
+de inloggegevens voor deze arcade pc staan in het aparte bestand [credentials.md](./credentials.md) (dit bestand staat in de .gitignore en wordt niet meegedeeld in de repository).

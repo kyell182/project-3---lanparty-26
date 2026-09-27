@@ -1,0 +1,12 @@
+# Gevoelige bestanden / credentials
+retro/credentials.md
+
+# Besturingssysteem
+Thumbs.db
+desktop.ini
+
+# Tijdelijke / editor bestanden
+*.tmp
+*~
+.idea/
+.vscode/
