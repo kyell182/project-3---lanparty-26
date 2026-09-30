@@ -9,8 +9,8 @@
 - [x] Eerste contact met een stakeholder leggen.
 - [x] Beslislog starten via het logboek.
 - [ ] Groepsleden, rollen, toegang, projectboard en eerste issues vervolledigen.
-- [ ] Projectplan opzetten.
-- [ ] Risicoanalyse opzetten.
+- [x] Projectplan opzetten.
+- [x] Risicoanalyse opzetten.
 
 ## Week 2 — Concept en haalbaarheid
 
