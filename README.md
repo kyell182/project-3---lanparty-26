@@ -76,15 +76,15 @@ Vul de namen aan en wijs voor elke taak een verantwoordelijke en eventueel een b
 | GitHub en documentatie | Kyell |  | Bezig | Repository onderhouden |
 | Budget en inkomsten |  |  | Nog te starten |  |
 | Communicatie en informatie |  |  | Nog te starten |  |
-| Deelnemersregistratie |  |  | Nog te starten |  |
-| Locatie, tafels en stroom |  |  | Nog te starten |  |
+| Deelnemersregistratie | Jules |  | Nog te starten |  |
+| Locatie, tafels en stroom | Jules |  | Nog te starten |  |
 | Netwerk en bekabeling |  |  | Nog te starten |  |
 | Cachingserver | Kyell |  | Nog te starten | Steam-caching onderzoeken |
 | Lokale gameservers |  |  | Nog te starten |  |
 | RetroPie en minicomputer | Kyell |  | Nog te starten |  |
 | Arduino-controller | Kyell |  | Nog te starten | Mogelijkheden onderzoeken |
-| Games en toernooien |  |  | Nog te starten |  |
-| Bordgames en nevenactiviteiten |  |  | Nog te starten | Spellenlab bekijken |
+| Games en toernooien | Jules |  | Nog te starten |  |
+| Bordgames en nevenactiviteiten | Jules |  | Nog te starten | Spellenlab bekijken |
 | Gedragscode en disclaimer |  |  | Nog te starten |  |
 | Support en incidenten |  |  | Nog te starten |  |
 | Leaderboard en stream |  |  | Nog te starten | Privacytoestemming voorzien |

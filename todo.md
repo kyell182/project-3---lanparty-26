@@ -1,119 +1,148 @@
 # LAN-party 26 — Todo-lijst
 
-> Afvinkbaar checklist per fase. Houd het beslislog bij voor elke beslissing en gate.
+> Houd het beslislog bij voor elke beslissing, test en go/no-go-gate.
 
-## 0. Kader en projectsturing
+## Week 1 — Intake en projectsturing
 
-- [ ] Projectplan opzetten
-- [ ] Begroting / budgetraming maken (met budgeteigenaar)
-- [ ] Stakeholderregister aanleggen
-- [ ] RACI-matrix maken (wie beslist, uitvoert, raadpleegt, informeert)
-- [ ] Risicoanalyse opzetten
-- [ ] Beslislog starten
+- [x] Groepsrepository, eerste documentatie, checklist en logboek opzetten.
+- [x] Eerste brainstorm uitvoeren.
+- [x] Eerste contact met een stakeholder leggen.
+- [x] Beslislog starten via het logboek.
+- [ ] Groepsleden, rollen, toegang, projectboard en eerste issues vervolledigen.
+- [ ] Projectplan opzetten.
+- [ ] Risicoanalyse opzetten.
 
-## 1. Concept (week 2 — Gate: Concept)
+## Week 2 — Concept en haalbaarheid
 
-- [ ] Doel en doelgroep definiëren
-- [ ] Datumopties bepalen
-- [ ] Capaciteit inschatten (deelnemers)
-- [ ] Budgeteigenaar aanwijzen
-- [ ] Conceptnota schrijven → **Gate 1: Concept akkoord**
+- [ ] Doel en doelgroep definiëren.
+- [ ] Datumopties en timing bepalen.
+- [ ] Capaciteit inschatten voor deelnemers, tafels en netwerkpoorten.
+- [ ] Begroting en budgeteigenaar bepalen.
+- [ ] Stakeholderregister aanleggen.
+- [ ] RACI-matrix maken: beslissen, uitvoeren, raadplegen en informeren.
+- [ ] Conceptnota schrijven.
+- [ ] **Gate 1: Concept akkoord** registreren.
 
-## 2. Locatie en toestemmingen (week 2–3 — Gate: Locatie)
+## Week 3 — Locatie en toestemmingen
 
-- [ ] Lokaal identificeren (openingsuren, evacuatieroutes, toegankelijkheid, sanitair, toezicht)
-- [ ] Fysiek plan maken: tafels, kabelroutes, labelconventie, nooduitgangen, helpdesk
-- [ ] Lokaalplan / kabelplan documenteren
-- [ ] Stuvo schriftelijk benaderen (voldoende doorlooptijd)
-- [ ] Lokaalplanning / gebouwbeheer informeren
-- [ ] Preventie raadplegen (veiligheid, evacuatie)
-- [ ] **Gate 2: Locatie akkoord**
+- [ ] Lokaal identificeren: openingsuren, evacuatie, toegankelijkheid, sanitair en toezicht.
+- [ ] Fysiek plan maken met tafels, kabelroutes, labelconventie, nooduitgangen en helpdesk.
+- [ ] Lokaal-, kabel- en stroomplan documenteren.
+- [ ] Stuvo schriftelijk benaderen.
+- [ ] Lokaalplanning en gebouwbeheer informeren.
+- [ ] Preventie raadplegen over veiligheid en evacuatie.
+- [ ] Aanvraag en akkoordregistratie bewaren.
+- [ ] **Gate 2: Locatie akkoord** registreren.
 
-## 3. Netwerk en techniek (week 5 — Gate: Techniek)
+## Week 4 — Ontwerp en proof-of-concept
 
-- [ ] Toestemming uplink verlenen via IT/netwerkbeheer
-- [ ] Netwerkontwerp maken op basis van IT-goedgekeurde uplink (geen eigen DHCP/router zonder akkoord)
-- [ ] Beheerde switches selecteren en plannen (gescheiden beheersnetwerk)
-- [ ] DHCP/routing-plan: IP-adressen, capaciteit, subnetten
-- [ ] Bandbreedteplan / capaciteitsplan (deelnemers, bekabelde poorten, uplink)
-- [ ] Stroomplan maken (aansluitingen, vermogen, back-up)
-- [ ] Caching-strategie kiezen (bijv. LANCache) voor toegelaten platformen
-- [ ] Lokale game-/ondersteunende servers plannen (licentieverzoek)
-- [ ] Monitoring en dashboards plannen (uplink, poorten, latency, packet loss, cache)
-- [ ] Netwerkdiagram + IP- en bandbreedteplan documenteren
-- [ ] **Gate 3: Techniek akkoord**
+- [ ] IT-goedgekeurde uplink en netwerkdiensten bevestigen.
+- [ ] Netwerkdiagram en dataflow maken.
+- [ ] IP-, DHCP-, bandbreedte- en capaciteitsplan opstellen.
+- [ ] Beheerde switches, poorten, labels en beheer plannen.
+- [ ] Grootste technische onzekerheid in een toegelaten proefopstelling testen.
+- [ ] Technische keuzes, alternatieven, risico’s en resourcegebruik documenteren.
 
-## 4. Caching en technische laboproef (week 7)
+## Week 5 — Fundament en voorlopige plannen
 
-- [ ] Proefopstelling opzetten (toegelaten omgeving)
-- [ ] Scenario 1: nieuwe deelnemer aansluiten, adres + connectiviteit
-- [ ] Scenario 2: onbekende/verkeerde DHCP of router detecteren zonder campusnet te raken
-- [ ] Scenario 3: cache hit/miss meten + werkende fallback
-- [ ] Scenario 4: gameserver bereiken + basisbelasting meten
-- [ ] Scenario 5: kabel-, switchpoort- of gameserverstoring diagnosticeren
-- [ ] Scenario 6: cache uitschakelen zonder internettoegang te breken
-- [ ] Scenario 7: monitoringalarm ontvangen en per runbook behandelen
-- [ ] Scenario 8: configuratie switch/service herstellen
-- [ ] Cachebenchmark documenteren (opslag, hit ratio, DNS-impact, fallback)
-- [ ] Switchconfiguratie back-up maken (zonder secrets)
+- [ ] Voorlopig netwerk-, stroom-, veiligheids- en communicatieplan afronden.
+- [ ] Cachingstrategie kiezen voor toegelaten platformen.
+- [ ] Opslag, hitratio, DNS-impact en fallback van caching plannen.
+- [ ] Lokale game- en ondersteunende servers plannen met aandacht voor licenties.
+- [ ] Monitoring en dashboards plannen voor uplink, poorten, latency, packet loss en cache.
+- [ ] Configuratieback-ups plannen zonder secrets.
+- [ ] Inschrijfformulier en minimale gegevensbehoefte voorbereiden.
+- [ ] Geen eigen DHCP, router, NAT of access point gebruiken zonder expliciet akkoord.
+- [ ] **Gate 3: Techniek akkoord** voorbereiden en registreren.
 
-## 5. Inschrijving en communicatie (week 5 en 9 — Gate: Communicatie)
+## Week 6 — Kernfunctionaliteit en support
 
-- [ ] Inschrijfformulier maken (minimale gegevens)
-- [ ] Privacytekst + bewaartermijn bepalen
-- [ ] Deelnemersvoorwaarden en gedragscode opstellen
-- [ ] Communicatieplan: aankondiging, praktische info, wijzigingen, incidenten
-- [ ] Aankondigingsbericht laten goedkeuren
-- [ ] Compatibiliteitschecklist voor deelnemers
-- [ ] **Gate 4: Communicatie akkoord** (geen officiële communicatie vóór akkoord!)
-- [ ] Inschrijving openen (alleen na akkoord)
+- [ ] Toegelaten proefopstelling opzetten.
+- [ ] Aansluiten van een nieuwe deelnemer en connectiviteit testen.
+- [ ] Gameserver met meerdere clients testen.
+- [ ] Servicedeskprocedure maken met triage, gekende problemen en escalatiepad.
+- [ ] Eerste technische runbooks schrijven.
+- [ ] Reservekabels en hulpmateriaal inventariseren.
+- [ ] Noodnummers van IT, gebouwbeheer en campus verzamelen.
 
-## 6. Uitvoering voorbereiden (week 9–11 — Gate: Uitvoering)
+## Week 7 — Security en technische laboproef
 
-- [ ] Crew werven en ploegenschema maken
-- [ ] Draaiboek: opbouw → afbraak, per ploeg
-- [ ] Servicedeskprocedure: triage, gekende problemen, escalatiepad
-- [ ] Reservekabels en materialen inventariseren
-- [ ] Noodnummers verzamelen (IT, gebouwbeheer, campus)
-- [ ] Rollbackplan en noodplan (no-Go) maken
-- [ ] Toernooischema + regels + verantwoordelijke
-- [ ] Nevenactiviteiten voor niet-meespelende deelnemers
-- [ ] Offline pakket: drivers, clients, documentatie (licentiekundig)
-- [ ] Dry-run met meerdere clients
-- [ ] Formele go/no-go-check → **Gate 5: Uitvoering akkoord**
-- [ ] Opbouw- en afbraakvenster afspreken met gebouwbeheer
+- [ ] Scenario 1: nieuwe deelnemer aansluiten en adres/connectiviteit verkrijgen.
+- [ ] Scenario 2: verkeerde DHCP- of routerfunctie detecteren zonder campusnetwerk te raken.
+- [ ] Scenario 3: cache hit en cache miss met werkende fallback meten.
+- [ ] Scenario 4: gameserver bereiken en basisbelasting meten.
+- [ ] Scenario 5: kabel-, switchpoort- of gameserverstoring diagnosticeren.
+- [ ] Scenario 6: cache uitschakelen zonder algemene internettoegang te breken.
+- [ ] Scenario 7: monitoringalarm ontvangen en volgens runbook behandelen.
+- [ ] Scenario 8: switch- of serviceconfiguratie herstellen.
+- [ ] Cachebenchmark documenteren: opslag, hitratio, DNS-impact en fallback.
+- [ ] Switchconfiguratie back-uppen zonder secrets.
+- [ ] Threat model en relevante dreigingen documenteren.
+- [ ] Secretscontrole en negatieve securitytests uitvoeren binnen de projectscope.
 
-## 7. Het evenement
+## Week 8 — Operations en herstel
 
-- [ ] Opbouw volgens draaiboek (binnen venster)
-- [ ] Monitoring/dashboard live (intern)
-- [ ] Servicedesk bemand
-- [ ] Incidentlog bijhouden
-- [ ] Afbraak en cleanup volgens draaiboek
+- [ ] Monitoringdashboard inrichten.
+- [ ] Twee of drie meetbare SLI’s en SLO’s bepalen.
+- [ ] Alertmatrix maken met drempel, ernst, eigenaar en runbookactie.
+- [ ] Logging, privacy, retentie en tijdsynchronisatie instellen.
+- [ ] Back-upstrategie, RPO en RTO bepalen.
+- [ ] Restore testen op een aparte VM of testomgeving.
+- [ ] Runbooks maken voor update, storing, back-up/restore, credentialrotatie en uitschakeling.
 
-## 8. Evaluatie (week 12)
+## Week 9 — Communicatie, automatisering en draaiboek
 
-- [ ] Metingen verzamelen (latency, packet loss, cache-effect, opkomst)
-- [ ] Incidentlog analyseren
-- [ ] Deelnemersfeedback verwerken
-- [ ] Gemiddelde oplostijd support bepalen
-- [ ] Gegevens verwijderen na retentieperiode
-- [ ] Evaluatierapport schrijven
-- [ ] Overdraagbaar draaiboek inleveren
+- [ ] Privacytekst en bewaartermijn toevoegen aan de inschrijving.
+- [ ] Deelnemersvoorwaarden en gedragscode opstellen.
+- [ ] Communicatieplan maken voor aankondiging, praktische info, wijzigingen en incidenten.
+- [ ] Compatibiliteitschecklist voor deelnemers opstellen.
+- [ ] Aankondigingsbericht laten goedkeuren.
+- [ ] **Gate 4: Communicatie akkoord** registreren.
+- [ ] Inschrijving openen, alleen na akkoord.
+- [ ] Crew werven en ploegenschema maken.
+- [ ] Belangrijke deployment- of beheertaak automatiseren.
+- [ ] Definitief draaiboek maken van opbouw tot afbraak.
+- [ ] Rollbackplan en noodplan voor een no-go-situatie maken.
+- [ ] Toernooischema, regels en verantwoordelijke bepalen.
+- [ ] Nevenactiviteiten voor niet-meespelende deelnemers plannen.
+- [ ] Offline pakket met drivers, clients en documentatie voorbereiden waar licenties dit toelaten.
 
-## 9. Verplichte bewijsstukken (checklist)
+## Week 10 — Gebruikerstest en generale repetitie
 
-- [ ] Goedgekeurde aanvragen / akkoordregistratie
-- [ ] RACI-matrix
-- [ ] Begroting
-- [ ] Lokaal- en kabelplan
-- [ ] Netwerkdiagram
-- [ ] IP- en bandbreedteplan
-- [ ] Cachebenchmark
-- [ ] Switchconfiguratie (zonder secrets)
-- [ ] Privacy- en communicatieplan
-- [ ] Gedragscode
-- [ ] Draaiboek
-- [ ] Servicedeskprocedure
-- [ ] Incidentlog
-- [ ] Evaluatierapport
+- [ ] Dry-run met meerdere clients uitvoeren.
+- [ ] Opbouw, netwerk, monitoring, support, incidenten en afbraak simuleren.
+- [ ] Capaciteit, latency, packet loss en cachegedrag meten.
+- [ ] Servicedesk en escalatiepad testen.
+- [ ] Openstaande risico’s en verbeteracties registreren.
+- [ ] Draaiboek, crewplanning en contactlijst aanpassen.
+
+## Week 11 — Stabilisatie en uitvoerings-gate
+
+- [ ] Kritieke fouten oplossen.
+- [ ] Rollback en herstel opnieuw testen.
+- [ ] Noodnummers, reservekabels en materialen controleren.
+- [ ] Opbouw- en afbraakvenster met gebouwbeheer bevestigen.
+- [ ] Alle technische en organisatorische bewijsstukken reviewen.
+- [ ] Formele go/no-go voor uitvoering registreren.
+- [ ] Bij no-go overschakelen naar een goedgekeurde tabletopoefening of dry-run.
+- [ ] **Gate 5: Uitvoering akkoord** registreren.
+
+## Evenement — Uitvoering en cleanup
+
+- [ ] Opbouw volgens draaiboek uitvoeren.
+- [ ] Monitoringdashboard intern live zetten.
+- [ ] Servicedesk bemannen.
+- [ ] Incidentlog en supportvragen bijhouden.
+- [ ] Latency, packet loss, cache-effect, opkomst en oplostijden meten.
+- [ ] Afbraak en cleanup volgens draaiboek uitvoeren.
+
+## Week 12 — Evaluatie en overdracht
+
+- [ ] Metingen en incidentlog analyseren.
+- [ ] Deelnemersfeedback verwerken.
+- [ ] Gemiddelde oplostijd van support bepalen.
+- [ ] Gegevens verwijderen na de afgesproken retentieperiode.
+- [ ] Aanbevelingen en verbeterpunten documenteren.
+- [ ] Evaluatierapport schrijven.
+- [ ] Overdraagbaar draaiboek opleveren.
+- [ ] Bewijsstukken compleet controleren: aanvragen, RACI, begroting, plannen, diagram, benchmark, configuratie, privacy, gedragscode, draaiboek, servicedesk, incidentlog en evaluatie.
