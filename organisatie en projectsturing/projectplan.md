@@ -22,14 +22,14 @@ De LAN-party gaat alleen door na formele goedkeuring van de relevante gates. Als
 
 ## 3. Probleem en gebruikers
 
-Studenten hebben nood aan een georganiseerd evenement waarin ze samen kunnen gamen in een stabiele, veilige en inclusieve omgeving. Zonder voorafgaande voorbereiding bestaan risico’s rond netwerkbelasting, stroom, veiligheid, privacy, ondersteuning en communicatie.
+Studenten willen een georganiseerd evenement waarin ze samen kunnen gamen in een stabiele, veilige en inclusieve omgeving. Zonder voorafgaande voorbereiding bestaan risico’s rond netwerkbelasting, stroom, veiligheid, privacy, ondersteuning en communicatie.
 
-### Gebruikers en betrokkenen
+### Gebruikers en stakeholders
 
 - deelnemers aan de LAN-party;
 - vrijwillige crew en supportmedewerkers;
 - Stuvo/studentenvoorzieningen;
-- opleidingshoofd en docent;
+- opleidingshoofd en docenten;
 - lokaalplanning, gebouwbeheer en preventie;
 - IT- en netwerkbeheer;
 - eventuele materiaal- of cateringpartners binnen het campusbeleid.
@@ -135,7 +135,7 @@ De groep werkt met issues, acceptatiecriteria, testbewijs en documentatie. Betek
 | Lokaalplanning/gebouwbeheer | Lokaal, openingsuren, opbouw en cleanup | Voor aanvraag en vóór uitvoering | Nog te bepalen |
 | Preventie | Evacuatie, veiligheid en toegankelijkheid | Tijdens locatieontwerp en go/no-go | Nog te bepalen |
 | IT/netwerkbeheer | Uplink, netwerkdiensten, changes en caching | Ontwerp, change request en technische gate | Nog te bepalen |
-| Deelnemers | Inschrijving, voorwaarden en praktische info | Alleen na communicatiegoedkeuring | Jules (registratie) |
+| Deelnemers | Inschrijving, voorwaarden en praktische info | Alleen na communicatiegoedkeuring | Jules |
 | Crew | Uitvoering en support | Briefing, draaiboek en eventdag | Nog te bepalen |
 
 Externe communicatie en communicatie naar studenten wordt vooraf goedgekeurd. Gebruik voor tests geen echte mailinglijsten of onnodige persoonsgegevens.
@@ -157,7 +157,7 @@ Geen akkoord betekent geen aansluiting op het campusnetwerk en geen communicatie
 | Week | Resultaat |
 |---:|---|
 | 1 | Intake, repository, logboek, brainstorm en eerste stakeholdercontact |
-| 2 | Conceptnota, datumopties, stakeholders, RACI en budgetraming |
+| 2 | Conceptnota, datumopties, studentenbevraging, stakeholders, RACI en budgetraming |
 | 3 | Aanvragen voor Stuvo, lokaalbeheer, preventie en IT |
 | 4 | Architectuur, dataflow, dreigingen, resourcebudget en proof-of-concept |
 | 5 | Voorlopig netwerk-, stroom-, veiligheids- en communicatieplan; technische gate |

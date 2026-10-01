@@ -71,20 +71,3 @@ Een risico is niet “opgelost” omdat een maatregel gepland is. Het restrisico
 ### Gatevoorwaarden
 
 Een go/no-go wordt niet gegeven wanneer een kritiek risico onbehandeld is, een verplichte goedkeuring ontbreekt, de dry-run faalt of rollback/herstel niet aantoonbaar werkt.
-
-## 5. Openstaande beslissingen
-
-- Wie wordt eigenaar en back-up van elk risico?
-- Welke datum, locatie, capaciteit en budget worden goedgekeurd?
-- Welke IT-diensten, uplink, switches, caching en gameservers zijn toegestaan?
-- Welke SLO’s en drempelwaarden gelden voor latency, packet loss, capaciteit en support?
-- Welke optionele onderdelen blijven binnen scope?
-
-## 6. Goedkeuring
-
-| Rol | Beslissing | Datum | Opmerking |
-|---|---|---|---|
-| Projectgroep | Nog te bespreken | Nog te bepalen | Risico-eigenaars invullen na groepsverdeling |
-| Docent/opdrachtgever | Nog te beoordelen | Nog te bepalen | Voor concept- en uitvoeringsbeslissingen |
-| IT/netwerkbeheer | Nog te beoordelen | Nog te bepalen | Voor uplink, netwerkdiensten en changes |
-| Gebouwbeheer/preventie | Nog te beoordelen | Nog te bepalen | Voor locatie, stroom en veiligheid |

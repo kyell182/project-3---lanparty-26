@@ -15,5 +15,7 @@ Voeg waar mogelijk een link naar bewijs toe, zoals een document, screenshot, con
 | 2026-09-25 |   Actie    | contact gelegd met meneer calleuw | aanvraag tot geprek rond organisatie van LAN-party                                                             |  Kyell   |
 | 2026-09-25 |   Actie    |         LAN-party concept         | Concept uitgewerkt voor een lokale LAN-opstelling en research                                                  |  Kyell   |
 | 2026-09-25 |   Actie    |        Pico 4 LAN-concept         | Concept en documentatie uitgewerkt voor een lokale Pico 4 LAN-opstelling met Quake3Quest en mogelijke casting. |  Jason   |
-| 2026-09-30 |   Beslissing    |        Organisatie         | Todo.md uitgebreid met week-per-week checklists. |  Jules   |
-|  |   Beslissing    |        Organisatie         | Opsplitsing van projectplan en risicoanalyse in eigen documenten. |  Jules   |
+| 2026-09-30 |   Beslissing    |        Projectdocumentatie         | Todo.md uitgebreid met week-per-week checklists. |  Jules   |
+|  |   Beslissing    |        Projectdocumentatie         | Opsplitsing van projectplan en risicoanalyse in eigen documenten. |  Jules   |
+| 2026-10-01 |   Beslissing    |        Projectdocumentatie         | Vervollediging van projectplan en risicoanalyse. |  Jules   |
+|  |   Actie    |        Organisatie         | Voorstel Microsoft Form aangemaakt. |  Jules   |
