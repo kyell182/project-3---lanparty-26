@@ -130,7 +130,10 @@ Het project wordt geëvalueerd aan de hand van:
 ├── organisatie en projectsturing
 |	├── todo.md						# Checklists week-per-week
 |	├── risicoanalyse.md  			# Risicobepaling en opvolging van go/no-go-beslissingen
-|	└── projectplan.md    			# Namen, datums, locaties, ...
+|	├── projectplan.md    			# Namen, datums, locaties, ...
+|	├── stakeholderregister.md		# Alle betrokkenen met belang, invloed en communicatie
+|	├── raci-matrix.md    			# Beslissen, uitvoeren, raadplegen en informeren per taak
+|	└── conceptnota.md    			# Conceptnota als basis voor Gate 1: Concept akkoord
 ├── logging
 |	└── logboek.md		  			# Beslissingen, acties, testen en incidenten
 └── brainstorm/

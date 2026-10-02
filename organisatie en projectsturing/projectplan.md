@@ -11,7 +11,7 @@
 | Product owner | Leroy Mathieu |
 | Technische coach | Leroy Mathieu |
 | Projectcoördinatie | Kyell |
-| Start/eind | Academiejaar 2026–2027; definitieve data te bevestigen |
+| Start/eind | Semester 1 Academiejaar 2026–2027 |
 | Status | Initiatie en conceptvorming |
 
 ## 2. Samenvatting
@@ -110,14 +110,14 @@ De groepsleden en de definitieve verdeling worden later gezamenlijk besproken. T
 
 | Onderdeel | Primaire eigenaar | Back-up | Status |
 |---|---|---|---|
-| Projectcoördinatie | Kyell | Nog te bepalen | Open |
+| Projectcoördinatie | Kyell | Jules | Open |
 | Budget en aanvragen | Nog te bepalen | Nog te bepalen | Open |
-| Locatie, tafels en stroom | Jules | Nog te bepalen | Open |
+| Locatie, tafels en stroom | Jules | Kyell | Open |
 | Netwerk en bekabeling | Nog te bepalen | Nog te bepalen | Open |
-| Cachingserver | Kyell | Nog te bepalen | Open |
+| Cachingserver | Kyell | Jules | Open |
 | Lokale gameservers | Nog te bepalen | Nog te bepalen | Open |
 | Monitoring, back-up en herstel | Nog te bepalen | Nog te bepalen | Open |
-| Deelnemersregistratie | Jules | Nog te bepalen | Open |
+| Deelnemersregistratie | Jules | Kyell | Open |
 | Privacy | Nog te bepalen | Nog te bepalen | Open |
 | Communicatie en gedragscode | Nog te bepalen | Nog te bepalen | Open |
 | Support en incidenten | Nog te bepalen | Nog te bepalen | Open |

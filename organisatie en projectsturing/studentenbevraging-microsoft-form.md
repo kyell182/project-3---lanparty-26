@@ -20,22 +20,14 @@ De bevraging is bedoeld voor planning, niet voor definitieve inschrijving.
 - **Titel:** Studentenbevraging LAN-party 2026
 - **Beschrijving:** We onderzoeken hoe een veilige en inclusieve LAN-party voor studenten eruit kan zien. De antwoorden helpen ons om games, activiteiten, timing, snacks en praktische ondersteuning te plannen. Invullen duurt ongeveer 3–5 minuten. Dit is nog geen inschrijving voor het evenement.
 
-## 3. Vragen
+## 3. Form
 
-### A. Interesse en doelgroep
+Hieronder volgt de bevraging zoals deze op de form komt:
 
-**1. Zou je deelnemen aan een LAN-party georganiseerd voor studenten?**  
-*Type: keuze, verplicht*
+### LAN-party 2026
+We onderzoeken hoe een veilige en inclusieve LAN-party voor studenten eruit kan zien. Een LAN-party is een bijeenkomst waar mensen fysiek samenkomen met hun eigen devices, zoals laptops, om deze via een lokaal netwerk (LAN) met elkaar te verbinden en games te spelen. De antwoorden helpen ons om games, activiteiten, timing en praktische ondersteuning te plannen. Invullen duurt ongeveer 3–5 minuten. Dit is nog geen volledige vertegenwoordiging of inschrijving voor het evenement.
 
-- Zeker wel
-- Waarschijnlijk wel
-- Misschien
-- Waarschijnlijk niet
-- Zeker niet
-
-**2. Wat spreekt je het meest aan?**  
-*Type: meerkeuze, verplicht; meerdere antwoorden mogelijk*
-
+#### 1. Welk onderdeel van een LAN-party spreekt je het meest aan? *Meerkeuze.* 
 - Casual games
 - Competitive games
 - Retro games
@@ -43,78 +35,78 @@ De bevraging is bedoeld voor planning, niet voor definitieve inschrijving.
 - Board games
 - Sfeer en gezelligheid
 - Vrienden en socialiseren
-- Andere, namelijk: *invulveld*
+- Geen voorkeur
+- Andere
 
-### B. Games en activiteiten
-
-**3. Heb je interesse in Video Games (casual, competitive, retro, ...) tijdens de LAN-party? Indien ja, welke video games mogen dan zeker niet ontbreken?**  
-*Type: meerkeuze, meerdere antwoorden mogelijk*
-
-- Ja, ik wil video games spelen *+ invulveld*
-- Misschien, afhankelijk van de activiteit en wachttijd
+#### 2. Heb je interesse in Video Games (casual, competitive, retro, ...) tijdens de LAN-party?
+- Ja
 - Nee
 - Geen voorkeur
 
-**4. Heb je interesse in Board games tijdens de LAN-party? Indien ja, welke board games mogen dan zeker niet ontbreken?**  
-*Type: meerkeuze, meerdere antwoorden mogelijk*
+#### 3. Indien ja, welke Video Games mogen er dan zeker niet ontbreken? *Meerkeuze.* 
+- Minecraft
+- Ultimate Chicken Horse
+- Rocket League
+- Andere
 
-- Ja, ik wil board games spelen *+ invulveld*
-- Misschien, afhankelijk van de activiteit en wachttijd
+#### 4. Heb je interesse in VR Games tijdens de LAN-party?
+- Ja
 - Nee
 - Geen voorkeur
 
-**5. Heb je interesse in VR games tijdens de LAN-party? Indien ja, welke VR games mogen dan zeker niet ontbreken?**  
-*Type: keuze*
+#### 5. Indien ja, welke VR Games mogen er dan zeker niet ontbreken? *Meerkeuze.* 
+- Beat Saber
+- Rec Room
+- Andere
 
-- Ja, ik wil VR games spelen *+ invulveld*
-- Misschien, afhankelijk van de activiteit en wachttijd
-- Nee
-- Geen voorkeur
+#### 6. Heb je interesse in Board Games tijdens de LAN-party? 
+Ja
+Nee
+Geen voorkeur
 
-### C. Snacks en dranken
+#### 7. Indien ja, welke Board Games mogen er dan zeker niet ontbreken? *Meerkeuze*
+- Exploding Kittens
+- Uno
+- Schaken
+- Andere
 
-**6. Welke snacks en dranken spreken je aan?**  
-*Type: meerkeuze, meerdere antwoorden mogelijk*
-
+#### 8. Welke snacks en drank spreken je aan? *Meerkeuze.*
 - Chips
-- Zoute snacks
+- Popcorn
 - Coca Cola
-- Ik neem zelf iets mee
-- Geen voorkeur
+- Fanta
+- Snacks en drank hoeven voor mij niet
 
-### D. Datum, timing en capaciteit
+#### 9. Hoeveel interesse heb je voor een campus LAN-party voor de studenten? 
+- Veel interesse
+- Redelijke interesse
+- Gematigde interesse
+- Weining interesse
+- Geen interesse
 
-**7. Wanneer zou je het liefst deelnemen?**  
-*Type: meerkeuze, meerdere antwoorden mogelijk*
+#### 10. Wanneer zou je het liefst deelnemen?
+- dd/mm/yy
+- dd/mm/yy
 
-- ...
-- Ik heb geen voorkeur
-
-**8. Hoe lang zou je blijven?**  
-*Type: keuze*
-
-- Minder dan 1 uur
-- 1 uur
-- 2 uren
-- Langer dan 2 uren
+#### 11. Hoe lang zou je blijven? 
+- <1u
+- 1u
+- 2u
+- >2u
 - Ik weet het nog niet
 
-**9. Hoe groot schat je de kans dat je effectief komt als je interesse toont?**  
-*Type: keuze*
+#### 12.Met hoeveel personen zou je ongeveer samen komen?
+- Ik kom alleen
+- Ik neem één andere mee
+- Ik neem twee anderen mee
+- Ik neem drie of meer anderen mee
 
-- Zeker aanwezig
-- Waarschijnlijk aanwezig
-- Misschien aanwezig
-- Waarschijnlijk niet aanwezig
-
-**10. Met hoeveel personen zou je ongeveer samen komen?**  
-*Type: keuze*
-
-- Alleen
-- Met 1 andere persoon
-- Met 2–4 personen
-- Met 5 of meer personen
-- Ik weet het nog niet
+#### 13. Mogen wij ervan uitgaan dat je er zal zijn als je interesse toont? 
+- Zeker wel
+- Waarschijnlijk wel
+- Misschien
+- Waarschijnlijk niet
+- Zeker niet
 
 ## 5. Analyse en bewijs
 

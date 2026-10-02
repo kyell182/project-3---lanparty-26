@@ -19,3 +19,4 @@ Voeg waar mogelijk een link naar bewijs toe, zoals een document, screenshot, con
 |  |   Beslissing    |        Projectdocumentatie         | Opsplitsing van projectplan en risicoanalyse in eigen documenten. |  Jules   |
 | 2026-10-01 |   Beslissing    |        Projectdocumentatie         | Vervollediging van projectplan en risicoanalyse. |  Jules   |
 |  |   Actie    |        Organisatie         | Voorstel Microsoft Form aangemaakt. |  Jules   |
+| 2026-10-02 |  Beslissing |  Projectdocumentatie       | Stakeholderregister, RACI-matrix en conceptnota opgesteld. |  Jules |

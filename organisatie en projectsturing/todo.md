@@ -18,9 +18,9 @@
 - [ ] Datumopties en timing bepalen.
 - [ ] Capaciteit inschatten voor deelnemers, tafels en netwerkpoorten.
 - [ ] Begroting en budgeteigenaar bepalen.
-- [ ] Stakeholderregister aanleggen.
-- [ ] RACI-matrix maken: beslissen, uitvoeren, raadplegen en informeren.
-- [ ] Conceptnota schrijven.
+- [x] Stakeholderregister aanleggen.
+- [x] RACI-matrix maken: beslissen, uitvoeren, raadplegen en informeren.
+- [x] Conceptnota schrijven.
 - [ ] **Gate 1: Concept akkoord** registreren.
 
 ## Week 3 — Locatie en toestemmingen
