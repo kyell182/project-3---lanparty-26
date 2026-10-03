@@ -1,0 +1,82 @@
+name: lan-monitoring
+
+# Alle geheimen en instellingen komen uit het bestand .env (zie .env.example).
+# De ":?" zorgt ervoor dat de stack niet start als een geheim ontbreekt.
+
+services:
+  influxdb:
+    image: influxdb:${INFLUXDB_VERSION:-2.7}
+    restart: unless-stopped
+    # Geen poort naar buiten: alleen Telegraf en Grafana hoeven erbij.
+    environment:
+      DOCKER_INFLUXDB_INIT_MODE: setup
+      DOCKER_INFLUXDB_INIT_USERNAME: ${INFLUXDB_ADMIN_USER:-lan_admin}
+      DOCKER_INFLUXDB_INIT_PASSWORD: ${INFLUXDB_ADMIN_PASSWORD:?Zet INFLUXDB_ADMIN_PASSWORD in .env}
+      DOCKER_INFLUXDB_INIT_ADMIN_TOKEN: ${INFLUXDB_TOKEN:?Zet INFLUXDB_TOKEN in .env}
+      DOCKER_INFLUXDB_INIT_ORG: ${INFLUXDB_ORG:-vives_lan}
+      DOCKER_INFLUXDB_INIT_BUCKET: ${INFLUXDB_BUCKET:-netmetrics}
+      DOCKER_INFLUXDB_INIT_RETENTION: ${INFLUXDB_RETENTION:-30d}
+    volumes:
+      - influxdb_data:/var/lib/influxdb2
+      - influxdb_config:/etc/influxdb2
+    healthcheck:
+      test: ["CMD", "influx", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  telegraf:
+    image: telegraf:${TELEGRAF_VERSION:-1.32}
+    restart: unless-stopped
+    # Nodig voor de ICMP-pings (latency en packet loss).
+    cap_add:
+      - NET_RAW
+    sysctls:
+      net.ipv4.ping_group_range: "0 2147483647"
+    environment:
+      INFLUXDB_URL: http://influxdb:8086
+      INFLUXDB_TOKEN: ${INFLUXDB_TOKEN}
+      INFLUXDB_ORG: ${INFLUXDB_ORG:-vives_lan}
+      INFLUXDB_BUCKET: ${INFLUXDB_BUCKET:-netmetrics}
+      SNMP_COMMUNITY: ${SNMP_COMMUNITY:?Zet SNMP_COMMUNITY in .env}
+      # Lijsten met komma's. start.sh zet ze om voor telegraf.conf.
+      SNMP_APPARATEN: ${SNMP_APPARATEN:?Zet SNMP_APPARATEN in .env}
+      PING_DOELEN: ${PING_DOELEN:?Zet PING_DOELEN in .env}
+    entrypoint: ["/bin/sh", "/start.sh"]
+    volumes:
+      - ./telegraf/start.sh:/start.sh:ro
+      - ./telegraf/telegraf.conf:/etc/telegraf/telegraf.conf:ro
+      # Optioneel, voor metingen per container. Een Docker-socket geeft in feite root-rechten
+      # op de host, daarom staat dit standaard uit. Zie het blok onderaan telegraf.conf.
+      # - /var/run/docker.sock:/var/run/docker.sock:ro
+      # Optioneel, voor de LanCache hit rate: zie het blok onderaan telegraf.conf.
+      # - ${LANCACHE_LOG_DIR:-./lancache-logs}:/lancache-logs:ro
+    depends_on:
+      influxdb:
+        condition: service_healthy
+
+  grafana:
+    image: grafana/grafana:${GRAFANA_VERSION:-11.3.0}
+    restart: unless-stopped
+    ports:
+      - "${GRAFANA_PORT:-3000}:3000"
+    environment:
+      GF_SECURITY_ADMIN_USER: ${GRAFANA_ADMIN_USER:-lan_admin}
+      GF_SECURITY_ADMIN_PASSWORD: ${GRAFANA_ADMIN_PASSWORD:?Zet GRAFANA_ADMIN_PASSWORD in .env}
+      GF_USERS_ALLOW_SIGN_UP: "false"
+      # Doorgegeven aan de provisioning in grafana/provisioning/datasources.
+      INFLUXDB_TOKEN: ${INFLUXDB_TOKEN}
+      INFLUXDB_ORG: ${INFLUXDB_ORG:-vives_lan}
+      INFLUXDB_BUCKET: ${INFLUXDB_BUCKET:-netmetrics}
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./grafana/provisioning:/etc/grafana/provisioning:ro
+      - ./grafana/dashboards:/var/lib/grafana/dashboards:ro
+    depends_on:
+      influxdb:
+        condition: service_healthy
+
+volumes:
+  influxdb_data:
+  influxdb_config:
+  grafana_data:

@@ -1,0 +1,7 @@
+name: lan-monitoring-70
+
+# De LAN van 70 gebruikt dezelfde stack als de map hierboven. Alleen de instellingen in
+# .env zijn anders. Zo blijft er maar één Compose-file om te onderhouden.
+include:
+  - path: ../docker-compose.yml
+    env_file: .env

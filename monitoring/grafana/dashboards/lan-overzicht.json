@@ -1,0 +1,193 @@
+{
+  "uid": "lan-overzicht",
+  "title": "LAN-party overzicht",
+  "tags": ["lan-party"],
+  "timezone": "browser",
+  "schemaVersion": 39,
+  "version": 1,
+  "refresh": "10s",
+  "time": { "from": "now-1h", "to": "now" },
+  "templating": {
+    "list": [
+      {
+        "name": "apparaat",
+        "label": "Apparaat",
+        "type": "query",
+        "datasource": { "type": "influxdb", "uid": "lan-influxdb" },
+        "query": "import \"influxdata/influxdb/schema\"\nschema.tagValues(bucket: v.defaultBucket, tag: \"agent_host\", predicate: (r) => r._measurement == \"interface\", start: -1h)",
+        "refresh": 2,
+        "sort": 1,
+        "multi": false,
+        "includeAll": false
+      },
+      {
+        "name": "interface",
+        "label": "Poort",
+        "type": "query",
+        "datasource": { "type": "influxdb", "uid": "lan-influxdb" },
+        "query": "import \"influxdata/influxdb/schema\"\nschema.tagValues(bucket: v.defaultBucket, tag: \"ifName\", predicate: (r) => r._measurement == \"interface\" and r.agent_host == \"${apparaat}\", start: -1h)",
+        "refresh": 2,
+        "sort": 1,
+        "multi": true,
+        "includeAll": true,
+        "allValue": ".*"
+      }
+    ]
+  },
+  "panels": [
+    {
+      "id": 8,
+      "type": "alertlist",
+      "title": "Actieve alarmen",
+      "description": "Alarmen die nu afgaan of bijna afgaan. Leeg betekent dat alles in orde is. De regels staan in Alerting, Alert rules.",
+      "gridPos": { "x": 0, "y": 0, "w": 24, "h": 5 },
+      "options": {
+        "viewMode": "list",
+        "groupMode": "default",
+        "maxItems": 20,
+        "sortOrder": 1,
+        "dashboardAlerts": false,
+        "alertName": "",
+        "showInstances": true,
+        "stateFilter": { "firing": true, "pending": true, "noData": true, "normal": false, "error": true }
+      }
+    },
+    {
+      "id": 1,
+      "type": "timeseries",
+      "title": "Doorvoer per poort",
+      "description": "Verkeer in en uit per poort van het gekozen apparaat. Voor de WAN-doorvoer kies je pfSense en de WAN-interface.",
+      "gridPos": { "x": 0, "y": 5, "w": 12, "h": 9 },
+      "datasource": { "type": "influxdb", "uid": "lan-influxdb" },
+      "fieldConfig": { "defaults": { "unit": "bps" }, "overrides": [] },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": { "type": "influxdb", "uid": "lan-influxdb" },
+          "query": "from(bucket: v.defaultBucket)\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r._measurement == \"interface\" and r.agent_host == \"${apparaat}\" and r.ifName =~ /^${interface:regex}$/)\n  |> filter(fn: (r) => r._field == \"ifHCInOctets\" or r._field == \"ifHCOutOctets\")\n  |> aggregateWindow(every: v.windowPeriod, fn: last, createEmpty: false)\n  |> derivative(unit: 1s, nonNegative: true)\n  |> map(fn: (r) => ({r with _value: r._value * 8.0}))"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "type": "table",
+      "title": "Poortstatus",
+      "description": "Laatste status per poort. Rood betekent dat de poort down is.",
+      "gridPos": { "x": 12, "y": 5, "w": 6, "h": 9 },
+      "datasource": { "type": "influxdb", "uid": "lan-influxdb" },
+      "fieldConfig": {
+        "defaults": {
+          "custom": { "cellOptions": { "type": "color-text" } },
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "1": { "text": "Up", "color": "green", "index": 0 },
+                "2": { "text": "Down", "color": "red", "index": 1 }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": { "type": "influxdb", "uid": "lan-influxdb" },
+          "query": "from(bucket: v.defaultBucket)\n  |> range(start: -5m)\n  |> filter(fn: (r) => r._measurement == \"interface\" and r._field == \"ifOperStatus\" and r.agent_host == \"${apparaat}\")\n  |> last()\n  |> group()\n  |> keep(columns: [\"ifName\", \"_value\"])\n  |> rename(columns: {ifName: \"Poort\", _value: \"Status\"})"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "type": "timeseries",
+      "title": "Pakketfouten per poort",
+      "description": "Nieuwe fouten per interval. Een stijgende lijn wijst op een slechte kabel of poort.",
+      "gridPos": { "x": 18, "y": 5, "w": 6, "h": 9 },
+      "datasource": { "type": "influxdb", "uid": "lan-influxdb" },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": { "type": "influxdb", "uid": "lan-influxdb" },
+          "query": "from(bucket: v.defaultBucket)\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r._measurement == \"interface\" and r.agent_host == \"${apparaat}\" and r.ifName =~ /^${interface:regex}$/)\n  |> filter(fn: (r) => r._field == \"ifInErrors\" or r._field == \"ifOutErrors\")\n  |> aggregateWindow(every: v.windowPeriod, fn: last, createEmpty: false)\n  |> difference(nonNegative: true)"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "type": "timeseries",
+      "title": "Latency en jitter",
+      "description": "Gemiddelde reactietijd en de spreiding daarvan (jitter) naar de pingdoelen.",
+      "gridPos": { "x": 0, "y": 14, "w": 8, "h": 8 },
+      "datasource": { "type": "influxdb", "uid": "lan-influxdb" },
+      "fieldConfig": { "defaults": { "unit": "ms" }, "overrides": [] },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": { "type": "influxdb", "uid": "lan-influxdb" },
+          "query": "from(bucket: v.defaultBucket)\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r._measurement == \"ping\" and r._field == \"average_response_ms\")\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)"
+        },
+        {
+          "refId": "B",
+          "datasource": { "type": "influxdb", "uid": "lan-influxdb" },
+          "query": "from(bucket: v.defaultBucket)\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r._measurement == \"ping\" and r._field == \"standard_deviation_ms\")\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "type": "timeseries",
+      "title": "Packet loss",
+      "gridPos": { "x": 8, "y": 14, "w": 8, "h": 8 },
+      "datasource": { "type": "influxdb", "uid": "lan-influxdb" },
+      "fieldConfig": { "defaults": { "unit": "percent", "min": 0 }, "overrides": [] },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": { "type": "influxdb", "uid": "lan-influxdb" },
+          "query": "from(bucket: v.defaultBucket)\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r._measurement == \"ping\" and r._field == \"percent_packet_loss\")\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "type": "timeseries",
+      "title": "Server: CPU en geheugen",
+      "gridPos": { "x": 16, "y": 14, "w": 8, "h": 8 },
+      "datasource": { "type": "influxdb", "uid": "lan-influxdb" },
+      "fieldConfig": { "defaults": { "unit": "percent", "min": 0, "max": 100 }, "overrides": [] },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": { "type": "influxdb", "uid": "lan-influxdb" },
+          "query": "from(bucket: v.defaultBucket)\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r._measurement == \"cpu\" and r.cpu == \"cpu-total\" and r._field == \"usage_idle\")\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> map(fn: (r) => ({r with _value: 100.0 - r._value, _field: \"cpu\"}))"
+        },
+        {
+          "refId": "B",
+          "datasource": { "type": "influxdb", "uid": "lan-influxdb" },
+          "query": "from(bucket: v.defaultBucket)\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r._measurement == \"mem\" and r._field == \"used_percent\")\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "type": "piechart",
+      "title": "LanCache: hit en miss (bytes)",
+      "description": "Toont data zodra het optionele blok voor het LanCache-logboek in telegraf.conf aanstaat.",
+      "gridPos": { "x": 0, "y": 22, "w": 8, "h": 8 },
+      "datasource": { "type": "influxdb", "uid": "lan-influxdb" },
+      "fieldConfig": { "defaults": { "unit": "bytes" }, "overrides": [] },
+      "options": {
+        "reduceOptions": { "values": true, "calcs": ["lastNotNull"], "fields": "/^_value$/" },
+        "legend": { "displayMode": "list", "placement": "right" }
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": { "type": "influxdb", "uid": "lan-influxdb" },
+          "query": "from(bucket: v.defaultBucket)\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r._measurement == \"lancache_access\" and r._field == \"bytes\")\n  |> group(columns: [\"cache_status\"])\n  |> sum()\n  |> group()"
+        }
+      ]
+    }
+  ]
+}

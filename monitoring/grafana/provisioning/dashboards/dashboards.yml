@@ -1,0 +1,9 @@
+apiVersion: 1
+
+providers:
+  - name: LAN-party
+    folder: LAN-party
+    type: file
+    allowUiUpdates: true
+    options:
+      path: /var/lib/grafana/dashboards

@@ -1,0 +1,2 @@
+# Shellscripts moeten LF-regeleinden houden, ook op Windows. Met CRLF start de container niet.
+*.sh text eol=lf

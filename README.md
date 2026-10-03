@@ -8,6 +8,63 @@ Dit project behandelt het volledige traject van een LAN-party, van behoefteanaly
 
 De LAN-party gaat alleen door na een formele go/no-go en de nodige goedkeuringen van de betrokken diensten. Als een evenement niet wordt goedgekeurd, wordt dezelfde technische en organisatorische aanpak uitgewerkt in een tabletopoefening en een goedgekeurde dry-run.
 
+## Waar begin ik?
+
+Dit document is het startpunt. Elk onderwerp heeft zijn eigen map. Hieronder zie je hoe ze op elkaar aansluiten en waar je wat vindt.
+
+```mermaid
+graph TD
+    R["README<br/>dit document"]
+    O["03-lan-party.md<br/>de opdracht"]
+    P["organisatie en projectsturing<br/>plan, risico's, RACI"]
+    N["netwerkontwerp<br/>het technische ontwerp"]
+    L["lan-70<br/>opstelling voor 70 deelnemers"]
+    M["monitoring<br/>Docker-stack met dashboard"]
+    D["draaiboek<br/>organisatie door VIVES"]
+    G["gedeeld<br/>begrippenlijst"]
+    LG["logging<br/>logboek"]
+
+    R --> O
+    R --> P
+    R --> N
+    N --> L
+    N --> M
+    L --> D
+    M --> D
+    R --> LG
+    G -.->|"uitleg van vaktermen"| N
+    G -.-> L
+    G -.-> M
+    G -.-> D
+```
+
+| Ik wil... | Ga naar |
+| --- | --- |
+| Weten wat de opdracht is | [03-lan-party.md](03-lan-party.md) |
+| Planning, stakeholders, RACI en risico's zien | [organisatie en projectsturing](organisatie%20en%20projectsturing/projectplan.md) |
+| Het netwerkontwerp in één keer begrijpen | [NETWERK_OVERZICHT.md](netwerkontwerp/NETWERK_OVERZICHT.md) |
+| Weten hoe het netwerk van 100 naar 10 000 deelnemers meegroeit | [SCHAALBAAR_ONTWERP.md](netwerkontwerp/SCHAALBAAR_ONTWERP.md) |
+| Een LAN van 70 opzetten (studentenvereniging) | [LAN_70_OPSTELLING.md](lan-70/LAN_70_OPSTELLING.md) |
+| Een LAN organiseren en uitvoeren (VIVES) | [draaiboek](draaiboek/00_OVERZICHT.md) |
+| De monitoring starten, zonder voorkennis | [HANDLEIDING.md](monitoring/HANDLEIDING.md) |
+| De monitoring in detail kennen | [monitoring/README.md](monitoring/README.md) |
+| Een vakterm opzoeken | [BEGRIPPEN.md](gedeeld/BEGRIPPEN.md) |
+| Zien wat er beslist en gedaan is | [logboek](logging/logboek.md) |
+
+## Stand van zaken
+
+Stand op 4 oktober 2026. Controleer het [logboek](logging/logboek.md) voor de laatste beslissingen.
+
+| Onderdeel | Stand |
+| --- | --- |
+| Netwerkontwerp (modules 1 tot 3 en overzicht) | Uitgewerkt als ontwerp, nog niet afgestemd met IT |
+| Schaalbaar ontwerp | Voorstel, nog niet goedgekeurd |
+| LAN van 70 | Opstelling beschreven, aannames nog te bevestigen |
+| Draaiboek | Eerste versie, termijnen zijn schattingen |
+| Monitoring | Getest met nagebootste apparaten, nog niet met echte switches en pfSense |
+| LanCache en gameservers | Nog niet gebouwd |
+| Labproef met de 8 scenario's | Nog niet uitgevoerd |
+| Go/no-go-gates | Nog te registreren in het logboek |
 ## Doelstellingen
 
 - Een haalbaar en professioneel evenement uitwerken.
@@ -125,23 +182,52 @@ Het project wordt geëvalueerd aan de hand van:
 
 ```text
 .
-├── 03-lan-party.md    				# Volledige opdrachtomschrijving en vereisten
-├── README.md         				# Projectoverzicht en werkwijze
-├── organisatie en projectsturing
-|	├── todo.md						# Checklists week-per-week
-|	├── risicoanalyse.md  			# Risicobepaling en opvolging van go/no-go-beslissingen
-|	├── projectplan.md    			# Namen, datums, locaties, ...
-|	├── stakeholderregister.md		# Alle betrokkenen met belang, invloed en communicatie
-|	├── raci-matrix.md    			# Beslissen, uitvoeren, raadplegen en informeren per taak
-|	└── conceptnota.md    			# Conceptnota als basis voor Gate 1: Concept akkoord
-├── logging
-|	└── logboek.md		  			# Beslissingen, acties, testen en incidenten
-└── brainstorm/
-	└── concepten.md      			# Eerste ideeën en conceptuitwerking
+├── README.md                          Projectoverzicht (dit document)
+├── 03-lan-party.md                    Volledige opdrachtomschrijving en vereisten
+├── CLAUDE.md                          Richtlijnen voor Claude Code in deze repository
+├── organisatie en projectsturing/     Plan, risico's en afspraken
+│   ├── projectplan.md                 Namen, datums, locaties
+│   ├── conceptnota.md                 Basis voor Gate 1: Concept akkoord
+│   ├── stakeholderregister.md         Betrokkenen met belang, invloed en communicatie
+│   ├── raci-matrix.md                 Beslissen, uitvoeren, raadplegen en informeren per taak
+│   ├── risicoanalyse.md               Risicobepaling en opvolging van go/no-go-beslissingen
+│   ├── studentenbevraging-microsoft-form.md
+│   └── todo.md                        Checklists week per week
+├── brainstorm/                        Eerste ideeën
+│   ├── concepten.md
+│   ├── Vr_Setup/
+│   └── layout lan party.pdf
+├── netwerkontwerp/                    Het technische ontwerp
+│   ├── NETWERK_ARCHITECTUUR.md        Module 1: netwerk, VLANs en stroom
+│   ├── MONITORING_STACK.md            Module 2: monitoring
+│   ├── SERVER_SERVICES.md             Module 3: LanCache, switchbeveiliging en QoS
+│   ├── NETWERK_OVERZICHT.md           Samenvatting van module 1 tot 3
+│   └── SCHAALBAAR_ONTWERP.md          Meegroeien van 100 tot 10 000 deelnemers
+├── lan-70/                            Opstelling voor 70 deelnemers
+│   └── LAN_70_OPSTELLING.md
+├── monitoring/                        Docker-stack voor de monitoring
+│   ├── HANDLEIDING.md                 Stap voor stap, zonder voorkennis
+│   ├── README.md                      Dashboard, alarmen en naslag
+│   ├── docker-compose.yml
+│   ├── .env.example
+│   ├── telegraf/                      Configuratie van de verzamelaar
+│   ├── grafana/                       Dashboard, alarmen en datasource
+│   └── lan-70/                        Ingevulde variant voor de LAN van 70
+├── draaiboek/                         Herbruikbaar draaiboek voor VIVES
+│   ├── 00_OVERZICHT.md                Rollen, gates en tijdlijn
+│   ├── 01_VOORBEREIDING.md
+│   ├── 02_OPBOUW.md
+│   ├── 03_EVENEMENT.md
+│   ├── 04_AFBRAAK_EN_EVALUATIE.md
+│   └── 05_BIJLAGEN.md                 Sjablonen
+├── gedeeld/
+│   └── BEGRIPPEN.md                   Begrippenlijst voor alle documenten
+├── logging/
+│   └── logboek.md                     Beslissingen, acties, testen en incidenten
+└── retro/                             RetroPie-installatiehandleiding
 ```
 
 Projectdocumenten en bewijsstukken worden toegevoegd zodra ze zijn uitgewerkt en goedgekeurd. Denk hierbij aan de RACI-matrix, begroting, risicoanalyse, netwerkdiagram, IP- en bandbreedteplan, cachebenchmark, privacy- en communicatieplan, gedragscode, draaiboek, servicedeskprocedure, incidentlog en evaluatierapport.
-
 ## Scope
 
 ### Binnen scope

@@ -31,55 +31,14 @@ sequenceDiagram
     G->>G: Render live grafieken op dashboard
 ```
 
-## 2. Docker Compose Deployment (`docker-compose.yml`)
+## 2. Docker Compose Deployment
 
-Gebruik de onderstaande configuratie om de volledige **TIG-stack** (Telegraf, InfluxDB, Grafana) in één keer uit te rollen op de centrale Linux-server:
+De volledige **TIG-stack** (Telegraf, InfluxDB, Grafana) staat in de map [monitoring/](../monitoring/README.md), met een kant-en-klare Compose-file, de Telegraf-configuratie en een Grafana-dashboard. Alle wachtwoorden en tokens komen uit een `.env`-bestand dat niet in git staat.
 
-```yaml
-version: '3.8'
-
-services:
-  influxdb:
-    image: influxdb:2.7
-    container_name: lan_influxdb
-    ports:
-      - "8086:8086"
-    volumes:
-      - influxdb_data:/var/lib/influxdb2
-    environment:
-      - DOCKER_INFLUXDB_INIT_MODE=setup
-      - DOCKER_INFLUXDB_INIT_USERNAME=vives_admin
-      - DOCKER_INFLUXDB_INIT_PASSWORD=SuperSafePassword123
-      - DOCKER_INFLUXDB_INIT_ORG=vives_lan
-      - DOCKER_INFLUXDB_INIT_BUCKET=netmetrics
-    restart: unless-stopped
-
-  telegraf:
-    image: telegraf:latest
-    container_name: lan_telegraf
-    volumes:
-      - ./telegraf.conf:/etc/telegraf/telegraf.conf:ro
-    depends_on:
-      - influxdb
-    restart: unless-stopped
-
-  grafana:
-    image: grafana/grafana:latest
-    container_name: lan_grafana
-    ports:
-      - "3000:3000"
-    volumes:
-      - grafana_data:/var/lib/grafana
-    environment:
-      - GF_SECURITY_ADMIN_USER=admin
-      - GF_SECURITY_ADMIN_PASSWORD=VivesLanGrafana2026
-    depends_on:
-      - influxdb
-    restart: unless-stopped
-
-volumes:
-  influxdb_data:
-  grafana_data:
+```bash
+cd monitoring
+cp .env.example .env   # vul de waarden in
+docker compose up -d
 ```
 
 ## 3. Aanbevolen Grafana KPI-Dashboards

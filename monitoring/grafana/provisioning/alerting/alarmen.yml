@@ -1,0 +1,373 @@
+apiVersion: 1
+
+# Elk alarm heeft drie stappen: A haalt data op (Flux), B maakt er één getal van, C vergelijkt
+# dat met de grens. Een alarm gaat af als C waar is, langer dan "for".
+# Grenzen en tijden zijn mijn eerste schatting. Pas ze aan na de labproef.
+#
+# Meldingen: zonder contactpunt zie je afgaande alarmen alleen in Grafana
+# (paneel "Actieve alarmen" op het dashboard, of Alerting, Alert rules).
+
+groups:
+  - orgId: 1
+    name: LAN-party
+    folder: LAN-party
+    interval: 30s
+    rules:
+      - uid: lan-poort-down
+        title: Poort is down gegaan
+        condition: C
+        for: 30s
+        noDataState: OK
+        execErrState: Error
+        labels:
+          severity: kritiek
+        annotations:
+          summary: "Een poort die het afgelopen kwartier up was, is nu down."
+          description: "Controleer kabel en poort van de getroffen deelnemer of switch. Zie draaiboek, fase 3, tabel Bekende problemen."
+        data:
+          - refId: A
+            relativeTimeRange: { from: 600, to: 0 }
+            datasourceUid: lan-influxdb
+            model:
+              refId: A
+              intervalMs: 1000
+              maxDataPoints: 43200
+              query: |
+                from(bucket: v.defaultBucket)
+                  |> range(start: -10m)
+                  |> filter(fn: (r) => r._measurement == "interface" and r._field == "ifOperStatus")
+                  |> group(columns: ["agent_host", "ifName"])
+                  |> reduce(
+                      identity: {laagste: 99, laatste: 0},
+                      fn: (r, accumulator) => ({
+                        laagste: if r._value < accumulator.laagste then r._value else accumulator.laagste,
+                        laatste: r._value
+                      })
+                    )
+                  |> filter(fn: (r) => r.laagste == 1 and r.laatste == 2)
+                  |> group()
+                  |> count(column: "laatste")
+                  |> map(fn: (r) => ({_time: now(), _value: r.laatste}))
+          - refId: B
+            datasourceUid: __expr__
+            model:
+              refId: B
+              type: reduce
+              expression: A
+              reducer: last
+              settings: { mode: dropNN }
+              datasource: { type: __expr__, uid: __expr__ }
+          - refId: C
+            datasourceUid: __expr__
+            model:
+              refId: C
+              type: threshold
+              expression: B
+              datasource: { type: __expr__, uid: __expr__ }
+              conditions:
+                - evaluator: { type: gt, params: [0] }
+                  operator: { type: and }
+                  query: { params: [B] }
+                  reducer: { type: last, params: [] }
+                  type: query
+
+      - uid: lan-pakketfouten
+        title: Pakketfouten nemen toe
+        condition: C
+        for: 2m
+        noDataState: OK
+        execErrState: Error
+        labels:
+          severity: waarschuwing
+        annotations:
+          summary: "Meer dan 10 nieuwe pakketfouten in de laatste 5 minuten."
+          description: "Wijst op een slechte kabel of poort. Wissel de kabel en kijk in het paneel Pakketfouten per poort welke poort het is."
+        data:
+          - refId: A
+            relativeTimeRange: { from: 300, to: 0 }
+            datasourceUid: lan-influxdb
+            model:
+              refId: A
+              intervalMs: 1000
+              maxDataPoints: 43200
+              query: |
+                from(bucket: v.defaultBucket)
+                  |> range(start: -5m)
+                  |> filter(fn: (r) => r._measurement == "interface" and (r._field == "ifInErrors" or r._field == "ifOutErrors"))
+                  |> group(columns: ["agent_host", "ifName", "_field"])
+                  |> increase()
+                  |> last()
+                  |> group()
+                  |> sum()
+                  |> map(fn: (r) => ({_time: now(), _value: float(v: r._value)}))
+          - refId: B
+            datasourceUid: __expr__
+            model:
+              refId: B
+              type: reduce
+              expression: A
+              reducer: last
+              settings: { mode: dropNN }
+              datasource: { type: __expr__, uid: __expr__ }
+          - refId: C
+            datasourceUid: __expr__
+            model:
+              refId: C
+              type: threshold
+              expression: B
+              datasource: { type: __expr__, uid: __expr__ }
+              conditions:
+                - evaluator: { type: gt, params: [10] }
+                  operator: { type: and }
+                  query: { params: [B] }
+                  reducer: { type: last, params: [] }
+                  type: query
+
+      - uid: lan-packet-loss
+        title: Packet loss
+        condition: C
+        for: 2m
+        noDataState: OK
+        execErrState: Error
+        labels:
+          severity: kritiek
+        annotations:
+          summary: "Meer dan 2% packet loss gemiddeld over de laatste 5 minuten."
+          description: "Controleer de uplink en de pingdoelen. Vraag IT of de uplink geraakt is. Zie draaiboek, escalatiepad niveau 3."
+        data:
+          - refId: A
+            relativeTimeRange: { from: 300, to: 0 }
+            datasourceUid: lan-influxdb
+            model:
+              refId: A
+              intervalMs: 1000
+              maxDataPoints: 43200
+              query: |
+                from(bucket: v.defaultBucket)
+                  |> range(start: -5m)
+                  |> filter(fn: (r) => r._measurement == "ping" and r._field == "percent_packet_loss")
+                  |> group(columns: ["url"])
+                  |> mean()
+                  |> group()
+                  |> max()
+                  |> map(fn: (r) => ({_time: now(), _value: r._value}))
+          - refId: B
+            datasourceUid: __expr__
+            model:
+              refId: B
+              type: reduce
+              expression: A
+              reducer: last
+              settings: { mode: dropNN }
+              datasource: { type: __expr__, uid: __expr__ }
+          - refId: C
+            datasourceUid: __expr__
+            model:
+              refId: C
+              type: threshold
+              expression: B
+              datasource: { type: __expr__, uid: __expr__ }
+              conditions:
+                - evaluator: { type: gt, params: [2] }
+                  operator: { type: and }
+                  query: { params: [B] }
+                  reducer: { type: last, params: [] }
+                  type: query
+
+      - uid: lan-latency-hoog
+        title: Latency is hoog
+        condition: C
+        for: 5m
+        noDataState: OK
+        execErrState: Error
+        labels:
+          severity: waarschuwing
+        annotations:
+          summary: "Gemiddelde latency boven 50 ms over de laatste 5 minuten."
+          description: "Kijk in het dashboard of de uplink vol zit en of de cache bereikt wordt. Een pingdoel op het internet heeft van nature meer latency dan een doel op het LAN."
+        data:
+          - refId: A
+            relativeTimeRange: { from: 300, to: 0 }
+            datasourceUid: lan-influxdb
+            model:
+              refId: A
+              intervalMs: 1000
+              maxDataPoints: 43200
+              query: |
+                from(bucket: v.defaultBucket)
+                  |> range(start: -5m)
+                  |> filter(fn: (r) => r._measurement == "ping" and r._field == "average_response_ms")
+                  |> group(columns: ["url"])
+                  |> mean()
+                  |> group()
+                  |> max()
+                  |> map(fn: (r) => ({_time: now(), _value: r._value}))
+          - refId: B
+            datasourceUid: __expr__
+            model:
+              refId: B
+              type: reduce
+              expression: A
+              reducer: last
+              settings: { mode: dropNN }
+              datasource: { type: __expr__, uid: __expr__ }
+          - refId: C
+            datasourceUid: __expr__
+            model:
+              refId: C
+              type: threshold
+              expression: B
+              datasource: { type: __expr__, uid: __expr__ }
+              conditions:
+                - evaluator: { type: gt, params: [50] }
+                  operator: { type: and }
+                  query: { params: [B] }
+                  reducer: { type: last, params: [] }
+                  type: query
+
+      - uid: lan-geen-snmp-data
+        title: Geen SNMP-data van een apparaat
+        condition: C
+        for: 1m
+        noDataState: Alerting
+        execErrState: Error
+        labels:
+          severity: kritiek
+        annotations:
+          summary: "Een apparaat of de collector levert al meer dan een minuut geen metingen."
+          description: "Controleer of het apparaat aanstaat en SNMP toelaat, en kijk met docker compose logs telegraf of de collector draait."
+        data:
+          - refId: A
+            relativeTimeRange: { from: 3600, to: 0 }
+            datasourceUid: lan-influxdb
+            model:
+              refId: A
+              intervalMs: 1000
+              maxDataPoints: 43200
+              query: |
+                from(bucket: v.defaultBucket)
+                  |> range(start: -1h)
+                  |> filter(fn: (r) => r._measurement == "interface" and r._field == "ifOperStatus")
+                  |> group(columns: ["agent_host"])
+                  |> last()
+                  |> group()
+                  |> map(fn: (r) => ({_time: now(), _value: float(v: int(v: now()) - int(v: r._time)) / 1000000000.0}))
+                  |> max()
+          - refId: B
+            datasourceUid: __expr__
+            model:
+              refId: B
+              type: reduce
+              expression: A
+              reducer: last
+              settings: { mode: dropNN }
+              datasource: { type: __expr__, uid: __expr__ }
+          - refId: C
+            datasourceUid: __expr__
+            model:
+              refId: C
+              type: threshold
+              expression: B
+              datasource: { type: __expr__, uid: __expr__ }
+              conditions:
+                - evaluator: { type: gt, params: [60] }
+                  operator: { type: and }
+                  query: { params: [B] }
+                  reducer: { type: last, params: [] }
+                  type: query
+
+      - uid: lan-cpu-hoog
+        title: Server-CPU is hoog
+        condition: C
+        for: 5m
+        noDataState: OK
+        execErrState: Error
+        labels:
+          severity: waarschuwing
+        annotations:
+          summary: "CPU van de server zit al 5 minuten boven 90%."
+          description: "Controleer welke container veel gebruikt met docker stats. Een overbelaste cache of gameserver geeft deelnemers een trage verbinding."
+        data:
+          - refId: A
+            relativeTimeRange: { from: 300, to: 0 }
+            datasourceUid: lan-influxdb
+            model:
+              refId: A
+              intervalMs: 1000
+              maxDataPoints: 43200
+              query: |
+                from(bucket: v.defaultBucket)
+                  |> range(start: -5m)
+                  |> filter(fn: (r) => r._measurement == "cpu" and r.cpu == "cpu-total" and r._field == "usage_idle")
+                  |> mean()
+                  |> map(fn: (r) => ({_time: now(), _value: 100.0 - r._value}))
+          - refId: B
+            datasourceUid: __expr__
+            model:
+              refId: B
+              type: reduce
+              expression: A
+              reducer: last
+              settings: { mode: dropNN }
+              datasource: { type: __expr__, uid: __expr__ }
+          - refId: C
+            datasourceUid: __expr__
+            model:
+              refId: C
+              type: threshold
+              expression: B
+              datasource: { type: __expr__, uid: __expr__ }
+              conditions:
+                - evaluator: { type: gt, params: [90] }
+                  operator: { type: and }
+                  query: { params: [B] }
+                  reducer: { type: last, params: [] }
+                  type: query
+
+      - uid: lan-geheugen-hoog
+        title: Server-geheugen is hoog
+        condition: C
+        for: 5m
+        noDataState: OK
+        execErrState: Error
+        labels:
+          severity: waarschuwing
+        annotations:
+          summary: "Geheugengebruik van de server zit al 5 minuten boven 90%."
+          description: "Controleer welke container veel geheugen gebruikt. De LanCache gebruikt veel RAM, dat is deels normaal."
+        data:
+          - refId: A
+            relativeTimeRange: { from: 300, to: 0 }
+            datasourceUid: lan-influxdb
+            model:
+              refId: A
+              intervalMs: 1000
+              maxDataPoints: 43200
+              query: |
+                from(bucket: v.defaultBucket)
+                  |> range(start: -5m)
+                  |> filter(fn: (r) => r._measurement == "mem" and r._field == "used_percent")
+                  |> mean()
+                  |> map(fn: (r) => ({_time: now(), _value: r._value}))
+          - refId: B
+            datasourceUid: __expr__
+            model:
+              refId: B
+              type: reduce
+              expression: A
+              reducer: last
+              settings: { mode: dropNN }
+              datasource: { type: __expr__, uid: __expr__ }
+          - refId: C
+            datasourceUid: __expr__
+            model:
+              refId: C
+              type: threshold
+              expression: B
+              datasource: { type: __expr__, uid: __expr__ }
+              conditions:
+                - evaluator: { type: gt, params: [90] }
+                  operator: { type: and }
+                  query: { params: [B] }
+                  reducer: { type: last, params: [] }
+                  type: query

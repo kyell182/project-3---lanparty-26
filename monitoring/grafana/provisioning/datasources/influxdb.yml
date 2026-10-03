@@ -1,0 +1,16 @@
+apiVersion: 1
+
+# Grafana leest de waarden uit de omgevingsvariabelen van de container.
+datasources:
+  - name: InfluxDB
+    uid: lan-influxdb
+    type: influxdb
+    access: proxy
+    url: http://influxdb:8086
+    isDefault: true
+    jsonData:
+      version: Flux
+      organization: ${INFLUXDB_ORG}
+      defaultBucket: ${INFLUXDB_BUCKET}
+    secureJsonData:
+      token: ${INFLUXDB_TOKEN}

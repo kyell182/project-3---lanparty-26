@@ -1,6 +1,9 @@
 # Gevoelige bestanden / credentials
 retro/credentials.md
 
+# Geheimen van de monitoringstack (alleen .env.example mag in git)
+.env
+
 # Besturingssysteem
 Thumbs.db
 desktop.ini
