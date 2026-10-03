@@ -76,100 +76,21 @@ Vul de namen aan en wijs voor elke taak een verantwoordelijke en eventueel een b
 | GitHub en documentatie | Kyell |  | Bezig | Repository onderhouden |
 | Budget en inkomsten |  |  | Nog te starten |  |
 | Communicatie en informatie |  |  | Nog te starten |  |
-| Deelnemersregistratie |  |  | Nog te starten |  |
-| Locatie, tafels en stroom |  |  | Nog te starten |  |
+| Deelnemersregistratie | Jules |  | Nog te starten |  |
+| Locatie, tafels en stroom | Jules |  | Nog te starten |  |
 | Netwerk en bekabeling |  |  | Nog te starten |  |
 | Cachingserver | Kyell |  | Nog te starten | Steam-caching onderzoeken |
 | Lokale gameservers |  |  | Nog te starten |  |
 | RetroPie en minicomputer | Kyell |  | Nog te starten |  |
 | Arduino-controller | Kyell |  | Nog te starten | Mogelijkheden onderzoeken |
-| Games en toernooien |  |  | Nog te starten |  |
-| Bordgames en nevenactiviteiten |  |  | Nog te starten | Spellenlab bekijken |
+| Games en toernooien | Jules |  | Nog te starten |  |
+| Boardgames en nevenactiviteiten | Jules |  | Nog te starten | Spellenlab bekijken |
 | Gedragscode en disclaimer |  |  | Nog te starten |  |
 | Support en incidenten |  |  | Nog te starten |  |
 | Leaderboard en stream |  |  | Nog te starten | Privacytoestemming voorzien |
 | Evaluatie |  |  | Nog te starten |  |
 
 Gebruik voor `Status` bijvoorbeeld `Nog te starten`, `Bezig`, `Geblokkeerd` of `Afgerond`.
-
-## Checklists
-
-### Concept en organisatie
-
-- [ ] Doelgroep, doel en gewenste capaciteit vastgelegd.
-- [ ] Datumopties en timing bepaald.
-- [ ] Stakeholders en contactpersonen geregistreerd.
-- [ ] RACI-matrix ingevuld.
-- [ ] Begroting en budgeteigenaar bepaald.
-- [ ] Risicoanalyse opgesteld.
-- [ ] Beslissingen en openstaande punten in het logboek opgenomen.
-
-### Goedkeuringen en locatie
-
-- [ ] Aanvraag ingediend bij Stuvo en de betrokken interne diensten.
-- [ ] Lokaal en openingsuren bevestigd.
-- [ ] Evacuatie, nooduitgangen en toezicht gecontroleerd.
-- [ ] Toegankelijkheid en sanitair gecontroleerd.
-- [ ] Stroomplan en kabelroutes goedgekeurd.
-- [ ] Capaciteit van tafels, stoelen en netwerkpoorten gecontroleerd.
-- [ ] Formele go/no-go voor de locatie geregistreerd.
-
-### Netwerk en techniek
-
-- [ ] Goedgekeurde uplink en netwerkdiensten bevestigd met IT.
-- [ ] IP-plan, DHCP-capaciteit en bandbreedte gecontroleerd.
-- [ ] Switches, poorten en kabels gelabeld.
-- [ ] Beheer en monitoring ingericht.
-- [ ] Configuratieback-ups gemaakt zonder secrets.
-- [ ] Cachingstrategie en toegelaten platformen bevestigd.
-- [ ] Cache hit, cache miss en fallback getest.
-- [ ] Gameservers getest met meerdere clients.
-- [ ] Rollback- en herstelprocedure getest.
-- [ ] Technische go/no-go geregistreerd.
-
-### Communicatie en deelnemers
-
-- [ ] Inschrijfformulier opgesteld.
-- [ ] Alleen noodzakelijke persoonsgegevens gevraagd.
-- [ ] Privacytekst en bewaartermijn toegevoegd.
-- [ ] Deelnemersvoorwaarden en gedragscode goedgekeurd.
-- [ ] Praktische informatie verstuurd.
-- [ ] Compatibiliteitschecklist voor deelnemers opgesteld.
-- [ ] Procedure voor wijzigingen en incidentcommunicatie bepaald.
-- [ ] Privacytoestemming voor leaderboard of stream geregeld.
-
-### Uitvoering
-
-- [ ] Crewplanning en contactlijst afgerond.
-- [ ] Servicedesk en escalatiepad klaar.
-- [ ] Reservekabels en hulpmateriaal aanwezig.
-- [ ] Draaiboek gedeeld met de crew.
-- [ ] Noodnummers en procedures beschikbaar.
-- [ ] Dry-run met meerdere clients uitgevoerd.
-- [ ] Formele go/no-go voor de uitvoering geregistreerd.
-- [ ] Incidentlog tijdens het evenement bijgehouden.
-- [ ] Cleanup en controle van de locatie uitgevoerd.
-
-### Evaluatie
-
-- [ ] Latency, packet loss en eventuele cachewinst gemeten.
-- [ ] Supportvragen en gemiddelde oplostijd verzameld.
-- [ ] Incidenten en genomen maatregelen samengevat.
-- [ ] Deelnemersfeedback verzameld.
-- [ ] Gegevens verwijderd na het verstrijken van de bewaartermijn.
-- [ ] Aanbevelingen en verbeterpunten gedocumenteerd.
-
-## Takenoverzicht
-
-Gebruik dit overzicht voor concrete acties die uit de checklists voortkomen.
-
-| Taak | Verantwoordelijke | Deadline | Status | Link of bewijs |
-| --- | --- | --- | --- | --- |
-| GitHub-repository bijwerken | Kyell |  | Bezig |  |
-| RetroPie op minicomputer uitwerken | Kyell |  | Nog te starten |  |
-| Arduino-controller onderzoeken | Kyell |  | Nog te starten |  |
-|  |  |  | Nog te starten |  |
-|  |  |  | Nog te starten |  |
 
 ## Logboek
 
@@ -204,18 +125,19 @@ Het project wordt geëvalueerd aan de hand van:
 
 ```text
 .
-├── 03-lan-party.md       # Volledige opdrachtomschrijving en vereisten
-├── README.md             # Projectoverzicht en werkwijze
-├── todo.md               # Afvinkbare checklist per fase
-├── brainstorm/           # Technisch ontwerp en conceptuitwerking
-│   ├── concepten.md
-│   ├── NETWERK_ARCHITECTUUR.md
-│   ├── MONITORING_STACK.md
-│   ├── SERVER_SERVICES.md
-│   └── Vr_Setup/
-├── logging/
-│   └── logboek.md        # Beslissingen, acties, testen en incidenten
-└── retro/                # RetroPie-installatiehandleiding
+├── 03-lan-party.md    				# Volledige opdrachtomschrijving en vereisten
+├── README.md         				# Projectoverzicht en werkwijze
+├── organisatie en projectsturing
+|	├── todo.md						# Checklists week-per-week
+|	├── risicoanalyse.md  			# Risicobepaling en opvolging van go/no-go-beslissingen
+|	├── projectplan.md    			# Namen, datums, locaties, ...
+|	├── stakeholderregister.md		# Alle betrokkenen met belang, invloed en communicatie
+|	├── raci-matrix.md    			# Beslissen, uitvoeren, raadplegen en informeren per taak
+|	└── conceptnota.md    			# Conceptnota als basis voor Gate 1: Concept akkoord
+├── logging
+|	└── logboek.md		  			# Beslissingen, acties, testen en incidenten
+└── brainstorm/
+	└── concepten.md      			# Eerste ideeën en conceptuitwerking
 ```
 
 Projectdocumenten en bewijsstukken worden toegevoegd zodra ze zijn uitgewerkt en goedgekeurd. Denk hierbij aan de RACI-matrix, begroting, risicoanalyse, netwerkdiagram, IP- en bandbreedteplan, cachebenchmark, privacy- en communicatieplan, gedragscode, draaiboek, servicedeskprocedure, incidentlog en evaluatierapport.
