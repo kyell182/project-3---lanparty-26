@@ -173,7 +173,7 @@ Gebruik dit overzicht voor concrete acties die uit de checklists voortkomen.
 
 ## Logboek
 
-Het afzonderlijke [logboek](logboek.md) bevat belangrijke beslissingen, acties, testen, problemen en incidenten. Voeg waar mogelijk een link naar bewijs toe, zoals een document, screenshot, configuratie zonder geheimen of testresultaat.
+Het afzonderlijke [logboek](logging/logboek.md) bevat belangrijke beslissingen, acties, testen, problemen en incidenten. Voeg waar mogelijk een link naar bewijs toe, zoals een document, screenshot, configuratie zonder geheimen of testresultaat.
 
 ## Planning
 
@@ -206,9 +206,16 @@ Het project wordt geëvalueerd aan de hand van:
 .
 ├── 03-lan-party.md       # Volledige opdrachtomschrijving en vereisten
 ├── README.md             # Projectoverzicht en werkwijze
-├── logboek.md            # Beslissingen, acties, testen en incidenten
-└── brainstorm/
-	└── concepten.md      # Eerste ideeën en conceptuitwerking
+├── todo.md               # Afvinkbare checklist per fase
+├── brainstorm/           # Technisch ontwerp en conceptuitwerking
+│   ├── concepten.md
+│   ├── NETWERK_ARCHITECTUUR.md
+│   ├── MONITORING_STACK.md
+│   ├── SERVER_SERVICES.md
+│   └── Vr_Setup/
+├── logging/
+│   └── logboek.md        # Beslissingen, acties, testen en incidenten
+└── retro/                # RetroPie-installatiehandleiding
 ```
 
 Projectdocumenten en bewijsstukken worden toegevoegd zodra ze zijn uitgewerkt en goedgekeurd. Denk hierbij aan de RACI-matrix, begroting, risicoanalyse, netwerkdiagram, IP- en bandbreedteplan, cachebenchmark, privacy- en communicatieplan, gedragscode, draaiboek, servicedeskprocedure, incidentlog en evaluatierapport.
