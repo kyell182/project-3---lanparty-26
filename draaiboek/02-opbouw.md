@@ -1,6 +1,6 @@
 # Fase 2: Opbouw
 
-Op de opbouwdag wordt het lokaal veilig en volgens plan ingericht en wordt het netwerk getest voor de deelnemers komen. Doe dit alleen binnen het afgesproken opbouwvenster. Vorige fase: [voorbereiding](01_VOORBEREIDING.md). Volgende fase: [evenement](03_EVENEMENT.md).
+Op de opbouwdag wordt het lokaal veilig en volgens plan ingericht en wordt het netwerk getest voor de deelnemers komen. Doe dit alleen binnen het afgesproken opbouwvenster. Vorige fase: [voorbereiding](01-voorbereiding.md). Volgende fase: [evenement](03-evenement.md).
 
 ## Volgorde
 
@@ -24,7 +24,7 @@ De richtduren zijn mijn schatting voor ongeveer 70 deelnemers. Ik heb ze niet ge
 ## Regels voor kabels en stroom
 
 - Leg kabels niet over looproutes. Gebruik kabelmatten of leg ze langs de rand.
-- Label beide kanten van elke kabel volgens de labelconventie in de [bijlagen](05_BIJLAGEN.md).
+- Label beide kanten van elke kabel volgens de labelconventie in de [bijlagen](05-bijlagen.md).
 - Overschrijd het afgesproken aantal pc's per stroomgroep nooit.
 - Houd de plek bij de servers vrij en afgeschermd van deelnemers.
 
@@ -57,4 +57,4 @@ graph TD
 
 ## Volgende stap
 
-Na de vrijgave begint het [evenement](03_EVENEMENT.md).
+Na de vrijgave begint het [evenement](03-evenement.md).

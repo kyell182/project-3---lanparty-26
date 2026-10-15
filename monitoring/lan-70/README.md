@@ -1,6 +1,6 @@
 # Monitoring voor de LAN van 70
 
-Dit is de kant-en-klare monitoring voor de opstelling in [LAN_70_OPSTELLING.md](../../lan-70/LAN_70_OPSTELLING.md). De map gebruikt dezelfde stack als [monitoring/](../README.md), maar met de instellingen voor 70 deelnemers al ingevuld in `.env`.
+Dit is de kant-en-klare monitoring voor de opstelling in [lan-70-opstelling.md](../../netwerk/lan-70-opstelling.md). De map gebruikt dezelfde stack als [monitoring/](../README.md), maar met de instellingen voor 70 deelnemers al ingevuld in `.env`.
 
 Geen voorkennis? Volg dan de [HANDLEIDING](../HANDLEIDING.md). Die legt per onderdeel uit wat je invult en hoe je controleert dat het werkt.
 
@@ -31,7 +31,7 @@ De IP-adressen komen uit het IP-plan, maar de echte adressen zijn nog niet beves
 
 1. Zet SNMP aan op pfSense en de twee switches, met de community uit `.env`, alleen lezen en beperkt tot het IP van deze server.
 2. Open de firewall: de server mag UDP 161 naar VLAN 10, en de crew-pc (VLAN 10) mag TCP 3000 naar de server.
-3. Test alles in de labproef, bij scenario 7 uit het [draaiboek](../../draaiboek/00_OVERZICHT.md).
+3. Test alles in de labproef, bij scenario 7 uit het [draaiboek](../../draaiboek/00-overzicht.md).
 
 Zolang de apparaten niet bestaan of SNMP niet aanstaat, start de stack wel, maar zijn de poortpanelen leeg. Het alarm *Geen SNMP-data van een apparaat* gaat dan af. Dat is bedoeld.
 

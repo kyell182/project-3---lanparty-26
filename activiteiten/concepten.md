@@ -5,7 +5,7 @@
 - caching server steam
 - disclaimer / gedragscode
 - leaderboard / stream
-- eind november 
+- 22 oktober 2026
 - 
 
 

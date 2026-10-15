@@ -1,6 +1,6 @@
 # Fase 4: Afbraak en evaluatie
 
-Afbraak gebeurt binnen het afgesproken venster. De evaluatie zorgt dat de volgende editie beter verloopt. Vorige fase: [evenement](03_EVENEMENT.md).
+Afbraak gebeurt binnen het afgesproken venster. De evaluatie zorgt dat de volgende editie beter verloopt. Vorige fase: [evenement](03-evenement.md).
 
 ## Afbraak
 
@@ -67,4 +67,4 @@ graph LR
     D --> V["Volgende editie: voorbereiding"]
 ```
 
-Terug naar het [overzicht](00_OVERZICHT.md) of naar de [voorbereiding](01_VOORBEREIDING.md) van de volgende editie.
+Terug naar het [overzicht](00-overzicht.md) of naar de [voorbereiding](01-voorbereiding.md) van de volgende editie.

@@ -1,6 +1,6 @@
 # Conceptnota — LAN-party 26
 
-> Conceptnota voor het evenement "LAN-party 26". Deze nota vormt de basis voor **Gate 1: Concept akkoord**. Definitieve waarden (datum, locatie, capaciteit, budget) worden ingevuld na overleg met de betrokken diensten en de studentenbevraging.
+> Conceptnota voor het evenement "LAN-party 26". Deze nota vormt de basis voor **Gate 1: Concept akkoord**. Datum (22/10/2026) en locatie (Stuvo) zijn vastgelegd; de deelnemerscapaciteit wordt door de IEEE student branch Brugge bepaald (de inschrijving verloopt via IEEE; de eigen studentenbevraging is afgevoerd).
 
 ## 1. Doel
 
@@ -16,7 +16,7 @@ Studenten willen een georganiseerd evenement waarin ze samen kunnen gamen. Zonde
 - Deelnemers variëren van casual gamers tot competitieve spelers.
 - Deelnemers die niet meespelen, krijgen inclusieve nevenactiviteiten (boardgames, RetroPie, Arduino-entertainment).
 
-De definitieve doelgroepomvang wordt bepaald op basis van de studentenbevraging en de capaciteit van de locatie.
+De definitieve doelgroepomvang wordt bepaald op basis van de inschrijving via IEEE student branch Brugge en de capaciteit van Stuvo.
 
 ## 4. Concept en kenmerken
 
@@ -28,7 +28,7 @@ De definitieve doelgroepomvang wordt bepaald op basis van de studentenbevraging 
 | RetroPie | RetroPie op minipc voor klassieke games; handleiding en setup door Kyell | Concept |
 | Arduino-controller | Ontdekking van mogelijkheden voor een Arduino-gebaseerde controller of entertainmentelement | Concept |
 | Boardgames / Spellenlab | Inclusieve nevenactiviteit via Spellenlab voor niet-meespelende deelnemers | Concept |
-| Leaderboard / stream | Live scoreboard of stream met expliciete privacytoestemming (Could) | Concept |
+| Leaderboard | Live scoreboard dat spelresultaten van de deelnemers toont; hoofdtaken van ons project (zie [leaderboard.md](leaderboard.md)) | Concept |
 | Inschrijving | Minimale gegevensverwerking met privacytekst, bewaartermijn en gedragscode | Concept |
 | Support | Servicedesk met triage, gekende problemen, reservekabels en escalatiepad | Concept |
 
@@ -36,16 +36,18 @@ De definitieve doelgroepomvang wordt bepaald op basis van de studentenbevraging 
 
 | Optie | Datum | Opmerking |
 |---|---|---|
-| 1 | Eind november 2026 | Eerste voorkeur; te verifiëren met gebouwbeheer en Stuvo |
+| 1 | Donderdag 22 oktober 2026, 18:00–24:00 | Vastgelegd |
 
-De definitieve datum wordt vastgelegd na akkoord van Stuvo, gebouwbeheer en IT. Het evenement is gepland als eenmalig dag- of weekendevent.
+De LAN-party vindt plaats op **donderdag 22 oktober 2026, van 18:00 tot 24:00**. Het evenement is een eenmalig dag-event.
 
 ## 6. Locatie en capaciteit (concept)
 
+De LAN-party vindt plaats in **Stuvo**, het kleine gebouw op de campus. De overkoepelende organisatie wordt gedaan door **IEEE student branch Brugge** (aanspreekpunt: Jonas Rollier); ons project is verantwoordelijk voor de inrichting en uitvoering in Stuvo en voor de leaderboard.
+
 | Aspect | Concept | Status |
 |---|---|---|
-| Locatie | Interne campusruimte, te bevestigen | Open |
-| Capaciteit deelnemers | Te bepalen via bevraging en lokaal | Open |
+| Locatie | Stuvo (klein gebouw op campus), 18:00–24:00 | Vastgelegd |
+| Capaciteit deelnemers | Te bevestigen via IEEE (inschrijving) en Stuvo | Open |
 | Tafels / werkplekken | Aantal en indeling te bepalen | Open |
 | Stroom | Aantal en verdeling stroompunten te bepalen | Open |
 | Evacuatie en toegankelijkheid | In overleg met preventie | Open |
@@ -60,18 +62,19 @@ De definitieve datum wordt vastgelegd na akkoord van Stuvo, gebouwbeheer en IT. 
 - Er worden geen illegale gamebestanden gedownload of gedistribueerd.
 - Alle technische scenario's worden getest in een toegelaten proefopstelling vóór het evenement.
 
-## 8. Budgetraming (concept)
+## 8. Budget (concept)
 
-| Categorie | Raambedrag | Eigenaar | Opmerking |
-|---|---|---|---|
-| Materialen (kabels, labels, verbruiksmateriaal) | Te bepalen | Kyell / Jules | |
-| Eventuele catering (binnen campusbeleid) | Te bepalen | Nog te bepalen | |
-| Technische middelen (switches, cachinghardware) | Te bepalen | Kyell | |
-| Communicatie (aankondiging, drukwerk indien nodig) | Te bepalen | Jules | |
-| Reserve / onvoorziene kosten | Te bepalen | Nog te bepalen | |
-| **Totaal (concept)** | **Te bepalen** | **Nog te bepalen** | |
+Het volledige evenement wordt financieel gedragen door de **IEEE student branch Brugge**; de posten hieronder zijn alleen de posten waarvoor wij direct eigenaar zijn (Stuvo-inrichting en leaderboard).
 
-Het budget wordt uitgewerkt na het concept-akkoord en bevestigd bij de budgeteigenaar.
+| Categorie | Eigenaar | Opmerking |
+|---|---|---|
+| Materialen (kabels, labels, verbruiksmateriaal) | Kyell / Jules | Via IEEE-budget |
+| Technische middelen (switches, cachinghardware) | Kyell | Via IEEE-budget |
+| Leaderboard (software en eventuele hardware) | Jules | Via IEEE-budget |
+| Communicatie (aankondiging, drukwerk indien nodig) | Jules | Via IEEE-budget |
+| Reserve / onvoorziene kosten | Kyell | Via IEEE-budget |
+
+De eindverantwoordelijkheid voor het totaalbudget ligt bij IEEE; de posten worden bij de budgeteigenaar afstemmen (contact: Kyell, vóór Gate 1).
 
 ## 9. Risico's (kern)
 
@@ -97,18 +100,18 @@ Voor de volledige risicoanalyse wordt verwezen naar [risicoanalyse.md](risicoana
 
 ## 11. Gate 1 — Concept akkoord
 
-Deze conceptnota is de basis voor de formele **Gate 1: Concept akkoord**. De volgende punten moeten bevestigd zijn:
+Deze conceptnota is de basis voor de formele **Gate 1: Concept akkoord**. De **Gate 1-bespreking met Leroy is gepland op vrijdag 16/10**; alle vijf de gates moeten vóór 20/10 gesloten zijn. De volgende punten moeten bevestigd zijn:
 
 - [ ] Doel en doelgroep zijn geformuleerd en goedgekeurd.
-- [ ] Datumopties zijn beoordeeld en een voorkeursoptie vastgelegd.
-- [ ] Capaciteit is ingeschat voor deelnemers, tafels en netwerkpoorten.
-- [ ] Begroting en budgeteigenaar zijn benoemd.
+- [ ] Datum (22/10/2026) en uren (18:00–24:00) zijn vastgelegd.
+- [ ] Capaciteit is ingeschat voor deelnemers, tafels en netwerkpoorten (capaciteit: via IEEE).
+- [ ] Budgetposten (Stuvo + leaderboard) zijn afgebakend; totaalbudget via IEEE.
 - [ ] Stakeholderregister en RACI-matrix zijn opgesteld.
 - [ ] De docent / product owner (Leroy Mathieu) heeft het concept goedgekeurd.
 
 | Veld | Waarde |
 |---|---|
-| Status conceptnota | Concept |
+| Status conceptnota | Uitvoeringsvoorbereiding |
 | Opsteller | Kyell, Jules |
-| Datum | 2026-10-02 |
-| Go/no-go (Gate 1) | Nog te beoordelen |
+| Datum | 2026-10-16 |
+| Go/no-go (Gate 1) | Open — bespreking 16/10 met Leroy |

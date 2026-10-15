@@ -1,10 +1,10 @@
 # Overzicht: Netwerk, Monitoring en Server Services
 
-Hier vat ik module 1 ([NETWERK_ARCHITECTUUR.md](NETWERK_ARCHITECTUUR.md)), module 2 ([MONITORING_STACK.md](MONITORING_STACK.md)) en module 3 ([SERVER_SERVICES.md](SERVER_SERVICES.md)) samen, met verduidelijkte schema's en een lijst van openstaande punten. Alles hieronder is een **ontwerp**: ik sluit niets aan vóór de go/no-go van gate "Techniek" (zie [README](../README.md)).
+Hier vat ik module 1 ([architectuur.md](architectuur.md)), module 2 ([monitoring-stack.md](monitoring-stack.md)) en module 3 ([server-services.md](server-services.md)) samen, met verduidelijkte schema's en een lijst van openstaande punten. Alles hieronder is een **ontwerp**: ik sluit niets aan vóór de go/no-go van gate "Techniek" (zie [README](../README.md)).
 
 ## Leesroute
 
-Dit overzicht zit in het midden. Links staan de drie modules waaruit het komt, rechts de documenten die erop voortbouwen. De [begrippenlijst](../gedeeld/BEGRIPPEN.md) gebruik ik bij alle documenten.
+Dit overzicht zit in het midden. Links staan de drie modules waaruit het komt, rechts de documenten die erop voortbouwen. De [begrippenlijst](../docs/begrippen.md) gebruik ik bij alle documenten.
 
 ```mermaid
 graph LR
@@ -19,9 +19,9 @@ graph LR
     BG -.-> SC
 ```
 
-- [Schaalbaar ontwerp](SCHAALBAAR_ONTWERP.md)
-- [LAN van 70](../lan-70/LAN_70_OPSTELLING.md)
-- [Draaiboek](../draaiboek/00_OVERZICHT.md)
+- [Schaalbaar ontwerp](schaalbaar-ontwerp.md)
+- [LAN van 70](lan-70-opstelling.md)
+- [Draaiboek](../draaiboek/00-overzicht.md)
 
 ## 1. Het geheel in één blik
 
@@ -241,7 +241,7 @@ Verdeel de tafels bewust over verschillende wandcontactdozen (groepen) in het VI
 
 Bij het nalezen van mijn drie modules zijn me dingen opgevallen die ik nog moet oplossen of laten bevestigen.
 
-1. **Geheimen in de repository (opgelost).** In de Compose-file in `MONITORING_STACK.md` stonden vaste wachtwoorden voor InfluxDB en Grafana. Dat botste met de projectregel dat er geen geheimen in de repo staan. De stack staat nu in [monitoring/](../monitoring/README.md) en leest alles uit een `.env`-bestand dat in `.gitignore` staat. Omdat de oude wachtwoorden al gecommit waren, beschouw ik ze als verbrand.
+1. **Geheimen in de repository (opgelost).** In de Compose-file in `monitoring-stack.md` stonden vaste wachtwoorden voor InfluxDB en Grafana. Dat botste met de projectregel dat er geen geheimen in de repo staan. De stack staat nu in [monitoring/](../monitoring/README.md) en leest alles uit een `.env`-bestand dat in `.gitignore` staat. Omdat de oude wachtwoorden al gecommit waren, beschouw ik ze als verbrand.
 2. **Eigen router en DHCP vragen toestemming.** Mijn ontwerp gebruikt pfSense als router, DHCP- en DNS-server. De README zegt dat dit niet mag zonder expliciete toestemming van IT. Ik moet dit laten bevestigen vóór gate "Techniek".
 3. **Subnetgrootte versus stroom.** VLAN 30 biedt ruimte aan 1022 hosts, maar twee stroomgroepen dragen slechts 10 pc's. De werkelijke capaciteit wordt door stroom en tafels bepaald, niet door het subnet. De capaciteit van het evenement heb ik nog niet bepaald.
 4. **Zes of vijf pc's per groep.** In module 1 schreef ik "5 tot 6", maar 6 pc's overschrijden de 80%-marge. Monitors en switches heb ik bovendien niet meegerekend.
@@ -253,4 +253,4 @@ Bij het nalezen van mijn drie modules zijn me dingen opgevallen die ik nog moet 
 
 ## 10. Hoe nu verder
 
-Een aantal van deze punten, zoals de VLAN-indeling en de plaats van de cache, werk ik uit in het [schaalbare ontwerp](SCHAALBAAR_ONTWERP.md). Daar bouw ik een opstelling die van 100 tot 10 000 deelnemers meegroeit.
+Een aantal van deze punten, zoals de VLAN-indeling en de plaats van de cache, werk ik uit in het [schaalbare ontwerp](schaalbaar-ontwerp.md). Daar bouw ik een opstelling die van 100 tot 10 000 deelnemers meegroeit.

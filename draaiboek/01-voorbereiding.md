@@ -1,6 +1,6 @@
 # Fase 1: Voorbereiding
 
-Vink af in je eigen kopie. Rollen en gates staan in het [overzicht](00_OVERZICHT.md). Volgende fase: [opbouw](02_OPBOUW.md).
+Vink af in je eigen kopie. Rollen en gates staan in het [overzicht](00-overzicht.md). Volgende fase: [opbouw](02-opbouw.md).
 
 De voorbereiding loopt langs vijf gates. De tijdlijn hieronder laat zien wanneer elk blok aan de beurt is, en elk blok krijgt daarna zijn eigen checklist.
 
@@ -41,7 +41,7 @@ timeline
 
 - [ ] Uplink en netwerkdiensten bevestigd met IT.
 - [ ] Toestemming voor eigen firewall, DHCP en DNS bevestigd (anders niet gebruiken).
-- [ ] Netwerkontwerp gekozen volgens de tier ([70 deelnemers](../lan-70/LAN_70_OPSTELLING.md) of het [schaalbare ontwerp](../netwerkontwerp/SCHAALBAAR_ONTWERP.md)).
+- [ ] Netwerkontwerp gekozen volgens de tier ([70 deelnemers](../netwerk/lan-70-opstelling.md) of het [schaalbare ontwerp](../netwerk/schaalbaar-ontwerp.md)).
 - [ ] IP-plan, DHCP-capaciteit en bandbreedte gecontroleerd.
 - [ ] Stroomplan: aantal groepen en pc's per groep.
 - [ ] Cachingstrategie en toegelaten platformen bevestigd.
@@ -52,7 +52,7 @@ timeline
 ## T minus 5 weken: labproef
 
 - [ ] Proefopstelling gebouwd in een toegelaten omgeving.
-- [ ] Alle 8 [scenario's](00_OVERZICHT.md#de-8-verplichte-scenarios) uitgevoerd en in het logboek genoteerd.
+- [ ] Alle 8 [scenario's](00-overzicht.md#de-8-verplichte-scenarios) uitgevoerd en in het logboek genoteerd.
 - [ ] Cachebenchmark gemaakt: opslag, hitratio, DNS-impact en fallback.
 - [ ] Switch- en serviceconfiguraties gebackupt zonder geheimen.
 - [ ] Rollback- en herstelprocedure getest.
@@ -64,7 +64,7 @@ timeline
 - [ ] Privacytekst en bewaartermijn bepaald.
 - [ ] Deelnemersvoorwaarden en gedragscode goedgekeurd.
 - [ ] Aankondiging goedgekeurd. **Geen officiële communicatie vóór akkoord.**
-- [ ] Compatibiliteitschecklist voor deelnemers klaar (zie [bijlagen](05_BIJLAGEN.md)).
+- [ ] Compatibiliteitschecklist voor deelnemers klaar (zie [bijlagen](05-bijlagen.md)).
 - [ ] Privacytoestemming voor leaderboard of stream geregeld.
 - [ ] Gate 4 geregistreerd. Daarna pas de inschrijving openen.
 
@@ -73,7 +73,7 @@ timeline
 - [ ] Crew geworven en ploegenschema gemaakt.
 - [ ] Servicedeskprocedure doorgenomen met de crew.
 - [ ] Reservekabels en hulpmateriaal geïnventariseerd.
-- [ ] Noodnummers en contactlijst gedeeld (zie [bijlagen](05_BIJLAGEN.md)).
+- [ ] Noodnummers en contactlijst gedeeld (zie [bijlagen](05-bijlagen.md)).
 - [ ] Rollback- en noodplan (no-go) opgesteld.
 - [ ] Toernooischema en regels klaar, indien van toepassing.
 - [ ] Generale repetitie met meerdere clients uitgevoerd.
@@ -88,4 +88,4 @@ timeline
 
 ## Volgende stap
 
-Bij een go begint de [opbouw](02_OPBOUW.md). Bij een no-go volgt een tabletopoefening en een goedgekeurde dry-run (zie het [overzicht](00_OVERZICHT.md)).
+Bij een go begint de [opbouw](02-opbouw.md). Bij een no-go volgt een tabletopoefening en een goedgekeurde dry-run (zie het [overzicht](00-overzicht.md)).

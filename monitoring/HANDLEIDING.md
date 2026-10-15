@@ -1,6 +1,6 @@
 # Handleiding: de monitoring opzetten
 
-Ik heb deze handleiding geschreven voor iemand zonder voorkennis. Je leert hoe je het instellingenbestand `.env` invult, wat elk onderdeel (elke "node") doet, en hoe je per onderdeel controleert of het werkt. Vaktermen zijn gelinkt naar de [begrippenlijst](../gedeeld/BEGRIPPEN.md).
+Ik heb deze handleiding geschreven voor iemand zonder voorkennis. Je leert hoe je het instellingenbestand `.env` invult, wat elk onderdeel (elke "node") doet, en hoe je per onderdeel controleert of het werkt. Vaktermen zijn gelinkt naar de [begrippenlijst](../docs/begrippen.md).
 
 ## Inhoud
 
@@ -59,13 +59,13 @@ Ga de stappen na elkaar af. Sla er geen over: elke stap bouwt op de vorige.
 
 - Een computer of server met **Docker** erop. Op Windows is dat Docker Desktop. Zet het aan en wacht tot onderin "Engine running" staat.
 - De map `monitoring` uit deze repository. Voor de LAN van 70 gebruik je de map [lan-70](lan-70/README.md): daar staat al een ingevulde `.env` met gegenereerde wachtwoorden. Je hoeft dan alleen de IP-adressen te controleren en de community op de apparaten te zetten.
-- De **IP-adressen** van de switches en pfSense. Die staan in het IP-plan en op de apparaten zelf. Een [IP-adres](../gedeeld/BEGRIPPEN.md#ip-adres) is het nummer waarmee je een apparaat vindt, bijvoorbeeld `10.10.10.2`.
+- De **IP-adressen** van de switches en pfSense. Die staan in het IP-plan en op de apparaten zelf. Een [IP-adres](../docs/begrippen.md#ip-adres) is het nummer waarmee je een apparaat vindt, bijvoorbeeld `10.10.10.2`.
 - Toegang tot het beheerscherm van de switches en pfSense.
 - Een plek om wachtwoorden veilig op te slaan, bijvoorbeeld een wachtwoordmanager. Zet ze nooit in een chat, mail of git.
 
 ## 4. Het .env-bestand maken
 
-Het [.env-bestand](../gedeeld/BEGRIPPEN.md#env-bestand) is het instellingenbestand. Alles wat je moet invullen staat hierin, op één plek.
+Het [.env-bestand](../docs/begrippen.md#env-bestand) is het instellingenbestand. Alles wat je moet invullen staat hierin, op één plek.
 
 1. Open een terminal (PowerShell op Windows) en ga naar de map. Voor de LAN van 70 is dat:
 
@@ -116,7 +116,7 @@ Elk onderdeel heeft dezelfde opbouw: wat het is, wat je invult, en hoe je contro
 | :-- | :-- | :-- |
 | `INFLUXDB_ADMIN_USER` | Laat staan (`lan_admin`) | De naam van de beheerder |
 | `INFLUXDB_ADMIN_PASSWORD` | Een gegenereerd wachtwoord | Het wachtwoord van de beheerder |
-| `INFLUXDB_TOKEN` | Een gegenereerd token | De sleutel waarmee Telegraf en Grafana bij de database mogen. Zie [token](../gedeeld/BEGRIPPEN.md#token). |
+| `INFLUXDB_TOKEN` | Een gegenereerd token | De sleutel waarmee Telegraf en Grafana bij de database mogen. Zie [token](../docs/begrippen.md#token). |
 | `INFLUXDB_ORG` | Laat staan (`vives_lan`) | De naam van de organisatie in de database |
 | `INFLUXDB_BUCKET` | Laat staan (`netmetrics`) | De "lade" waarin de metingen komen |
 | `INFLUXDB_RETENTION` | Laat staan (`30d`) | Hoe lang metingen bewaard blijven. `30d` is 30 dagen. |
@@ -155,13 +155,13 @@ Zie je het inlogscherm niet? Controleer of Docker draait en of de firewall poort
 
 ### Node 3: Telegraf (de verzamelaar)
 
-**Wat het is.** Het programma dat elke 10 seconden alle apparaten bevraagt en de antwoorden bewaart. Het gebruikt daarvoor [SNMP](../gedeeld/BEGRIPPEN.md#snmp).
+**Wat het is.** Het programma dat elke 10 seconden alle apparaten bevraagt en de antwoorden bewaart. Het gebruikt daarvoor [SNMP](../docs/begrippen.md#snmp).
 
 **Wat je invult.**
 
 | Instelling | Wat je invult | Uitleg |
 | :-- | :-- | :-- |
-| `SNMP_COMMUNITY` | Een gegenereerde waarde | Een soort wachtwoord. Zie [SNMP-community](../gedeeld/BEGRIPPEN.md#snmp-community). **Dezelfde waarde zet je straks op alle switches en pfSense.** |
+| `SNMP_COMMUNITY` | Een gegenereerde waarde | Een soort wachtwoord. Zie [SNMP-community](../docs/begrippen.md#snmp-community). **Dezelfde waarde zet je straks op alle switches en pfSense.** |
 | `SNMP_APPARATEN` | De IP-adressen van pfSense en de switches, met komma's ertussen | Bijvoorbeeld `10.10.10.1,10.10.10.2,10.10.10.3` |
 | `PING_DOELEN` | IP-adressen waarvan je de snelheid wilt meten, met komma's ertussen | Bijvoorbeeld `10.10.20.10,1.1.1.1`. Het eerste is de server, het tweede het internet. |
 

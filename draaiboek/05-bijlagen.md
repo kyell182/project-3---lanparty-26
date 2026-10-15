@@ -1,6 +1,6 @@
 # Bijlagen
 
-Sjablonen om te kopiëren voor elke editie. Terug naar het [overzicht](00_OVERZICHT.md).
+Sjablonen om te kopiëren voor elke editie. Terug naar het [overzicht](00-overzicht.md).
 
 ## Contactlijst
 

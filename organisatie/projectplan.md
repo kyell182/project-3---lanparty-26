@@ -1,6 +1,6 @@
 # Projectplan — LAN-party 26
 
-> Namen, definitieve datum, locatie en capaciteitswaarden worden ingevuld na overleg met betrokken diensten.
+> Datum, locatie en team zijn vastgelegd; capaciteitswaarden en IT-toestemmingen worden nog ingevuld na overleg met betrokken diensten.
 
 ## 1. Projectidentiteit
 
@@ -12,7 +12,7 @@
 | Technische coach   | Leroy Mathieu                     |
 | Projectcoördinatie | Kyell                             |
 | Start/eind         | Semester 1 Academiejaar 2026–2027 |
-| Status             | Initiatie en conceptvorming       |
+| Status | Uitvoeringsvoorbereiding — alle vijf gates open, te sluiten vóór 20/10 |
 
 ## 2. Samenvatting
 
@@ -59,13 +59,17 @@ De definitieve doelgroep, capaciteit en gebruikersbehoeften worden vastgelegd in
 | Uitvoering            | Nog te bepalen                   | Opbouw en afbraak binnen afgesproken venster                         | Tijdregistratie              |
 | Overdracht            | Geen overdrachtsdossier          | Dossier, runbooks, tests en evaluatie compleet                       | Review vóór oplevering       |
 
-De concrete drempelwaarden worden vastgelegd vóór de laboproef en dry-run.
+De concrete drempelwaarden worden tijdens de laboproef (week 17, Kyell) vastgelegd en vóór de dry-run bevestigd.
+
+> **Eigenschappen van deze editie.** De LAN-party vindt plaats op **donderdag 22 oktober 2026, 18:00–24:00**, in **Stuvo**. De overkoepelende organisatie is in handen van **IEEE student branch Brugge** (aanspreekpunt: Jonas Rollier); ons project is zelf verantwoordelijk voor de **inrichting en uitvoering in Stuvo** en voor de **leaderboard**. Deze twee vormen de kern van onze scope.
 
 ## 6. Scope
 
 ### Must
 
 - projectplan, begroting, stakeholderregister, risicoanalyse en beslislog;
+- de inrichting en uitvoering van de LAN-party in Stuvo (lokaal, tafels, stroom, opbouw);
+- de leaderboard: live scoreboard met resultaten en expliciete privacytoestemming (zie [leaderboard.md](leaderboard.md));
 - schriftelijke aanvragen aan Stuvo en betrokken interne diensten;
 - capaciteitsplan voor deelnemers, poorten, uplink, IP-adressen, bandbreedte en stroom;
 - fysiek lokaal-, tafel-, kabel- en veiligheidsplan;
@@ -90,7 +94,7 @@ De concrete drempelwaarden worden vastgelegd vóór de laboproef en dry-run.
 ### Could
 
 - captive portal of deelnemersdashboard na IT-goedkeuring;
-- live scoreboard of stream met expliciete privacytoestemming;
+- live stream van toernooirondes met expliciete privacytoestemming (de leaderboard zelf is een Must);
 - duurzaamheidsmeting;
 - n8n-integratie via een testsink of goedgekeurd kanaal;
 - RetroPie, Arduino-controller of andere entertainmentuitbreidingen.
@@ -106,71 +110,68 @@ De concrete drempelwaarden worden vastgelegd vóór de laboproef en dry-run.
 
 ## 7. Werkwijze en verantwoordelijkheden
 
-De groepsleden en de definitieve verdeling worden later gezamenlijk besproken. Tot dan blijven eigenaarsvelden open. Voor elke kritieke taak wordt daarna een primaire én secundaire eigenaar aangeduid.
+De groepsleden (Kyell en Jules) en de taakverdeling zijn definitief. Voor elke kritieke taak wordt een primaire én secundaire eigenaar aangeduid.
 
 | Onderdeel                      | Primaire eigenaar | Back-up        | Status |
 | ------------------------------ | ----------------- | -------------- | ------ |
-| Projectcoördinatie             | Kyell             | Jules          | Open   |
-| Budget en aanvragen            | Nog te bepalen    | Nog te bepalen | Open   |
-| Locatie, tafels en stroom      | Jules             | Kyell          | Open   |
-| Netwerk en bekabeling          | Nog te bepalen    | Nog te bepalen | Open   |
-| Cachingserver                  | Kyell             | Jules          | Open   |
-| Lokale gameservers             | Nog te bepalen    | Nog te bepalen | Open   |
-| Monitoring, back-up en herstel | Nog te bepalen    | Nog te bepalen | Open   |
-| Deelnemersregistratie          | Jules             | Kyell          | Open   |
-| Privacy                        | Nog te bepalen    | Nog te bepalen | Open   |
-| Communicatie en gedragscode    | Nog te bepalen    | Nog te bepalen | Open   |
-| Support en incidenten          | Nog te bepalen    | Nog te bepalen | Open   |
-| Draaiboek en uitvoering        | Nog te bepalen    | Nog te bepalen | Open   |
-| Evaluatie en overdracht        | Nog te bepalen    | Nog te bepalen | Open   |
+| Projectcoördinatie             | Kyell             | Jules          | Actief |
+| Budget (Stuvo/leaderboard, via IEEE) | Kyell       | Jules          | Actief |
+| Locatie, tafels en stroom      | Jules             | Kyell          | Actief |
+| Netwerk en bekabeling          | Kyell             | Kyell          | Actief |
+| Cachingserver                  | Kyell             | Jules          | Actief |
+| Leaderboard (core)             | Jules             | Kyell          | Actief |
+| Lokale gameservers (RetroPie)  | Kyell             | Kyell          | Actief |
+| VR / Pico 4                    | Jules             | Jules          | Actief |
+| Monitoring, back-up en herstel | Kyell             | Kyell          | Actief |
+| Deelnemersregistratie          | Jules             | Kyell          | Actief |
+| Privacy                        | Jules             | Jules          | Actief |
+| Communicatie en gedragscode    | Jules             | Jules          | Actief |
+| Support en incidenten          | Kyell + Jules + crew | Kyell     | Actief |
+| Draaiboek en uitvoering        | Jules             | Kyell          | Actief |
+| Evaluatie en overdracht        | Jules + Kyell     | Jules + Kyell  | Actief |
 
 De groep werkt met issues, acceptatiecriteria, testbewijs en documentatie. Betekenisvolle wijzigingen verlopen via review/pull request. Een issue wordt pas gesloten wanneer uitvoering, validatie, documentatie en risico/rollback zijn geregistreerd.
 
 ## 8. Stakeholders en communicatie
 
-| Stakeholder                 | Belang/beslissing                            | Communicatie                                    | Eigenaar       |
-| --------------------------- | -------------------------------------------- | ----------------------------------------------- | -------------- |
-| Docent/opleidingshoofd      | Opdracht, scope en formele gates             | Wekelijks en bij escalatie                      | Leroy Mathieu  |
-| Stuvo                       | Evenement en studentenvoorzieningen          | Concept en aanvraag; opvolging volgens afspraak | Nog te bepalen |
-| Lokaalplanning/gebouwbeheer | Lokaal, openingsuren, opbouw en cleanup      | Voor aanvraag en vóór uitvoering                | Nog te bepalen |
-| Preventie                   | Evacuatie, veiligheid en toegankelijkheid    | Tijdens locatieontwerp en go/no-go              | Nog te bepalen |
-| IT/netwerkbeheer            | Uplink, netwerkdiensten, changes en caching  | Ontwerp, change request en technische gate      | Nog te bepalen |
-| Deelnemers                  | Inschrijving, voorwaarden en praktische info | Alleen na communicatiegoedkeuring               | Jules          |
-| Crew                        | Uitvoering en support                        | Briefing, draaiboek en eventdag                 | Nog te bepalen |
+Het volledige overzicht met contactgegevens en frequentie staat in het [stakeholderregister](stakeholderregister.md). Belangrijkste aansluitpunten voor dit plan:
+
+| Stakeholder                 | Belang/beslissing                            | Aansluiting |
+| --------------------------- | -------------------------------------------- | ----------- |
+| Leroy (projectgever)         | Opdracht, scope en formele gates             | Gate 1: 16/10 |
+| IEEE student branch Brugge  | Hoofdorganisator, inschrijving, bewijsstukken | Via Kyell |
+| Stuvo / gebouwbeheer / preventie | Lokaal, stroom, veiligheid, opbouw/cleanup | Via Jules |
+| IT / netwerkbeheer          | Uplink, netwerkdiensten, change request      | Via Kyell |
+| Deelnemers                  | Inschrijving, voorwaarden, praktische info    | Via Jules |
+| Crew                        | Uitvoering en support                        | Via Kyell + Jules |
 
 Externe communicatie en communicatie naar studenten wordt vooraf goedgekeurd. Gebruik voor tests geen echte mailinglijsten of onnodige persoonsgegevens.
 
 ## 9. Go/no-go-gates
 
-| Gate         | Vereiste voor akkoord                                                   | Bewijs                                          |
-| ------------ | ----------------------------------------------------------------------- | ----------------------------------------------- |
-| Concept      | Doel, doelgroep, datumopties, capaciteit en budgeteigenaar              | Conceptnota en akkoordregistratie               |
-| Locatie      | Lokaal, openingsuren, evacuatie, toegankelijkheid, sanitair en toezicht | Lokaal-, stroom- en veiligheidsplan             |
-| Techniek     | Uplink, switches, DHCP/routing, stroom en caching zijn toegelaten       | Netwerkplan, change/akkoord en technische tests |
-| Communicatie | Inschrijving, privacy, gedragscode en bericht zijn goedgekeurd          | Communicatiepakket en akkoord                   |
-| Uitvoering   | Crew, support, noodnummers, rollback en cleanup zijn klaar              | Dry-run, draaiboek en formele go/no-go          |
+**Alle vijf de gates moeten vóór 20/10 gesloten zijn.** Gate 1 (concept) wordt besproken in een meeting met Leroy op **vrijdag 16/10**. Elke gesloten gate wordt in het [logboek](logboek.md) geregistreerd met bewijs.
+
+| Gate         | Vereiste voor akkoord                                                   | Bewijs                                          | Deadline |
+| ------------ | ----------------------------------------------------------------------- | ----------------------------------------------- | -------- |
+| 1 — Concept  | Doel, doelgroep, datum, capaciteit en budgeteigenaar akkoord            | Conceptnota en akkoordregistratie               | 16/10 (meeting met Leroy) |
+| 2 — Locatie  | Lokaal, openingsuren, evacuatie, toegankelijkheid, sanitair en toezicht | Lokaal-, stroom- en veiligheidsplan             | 20/10 |
+| 3 — Techniek | Uplink, switches, DHCP/routing, stroom en caching zijn toegelaten       | Netwerkplan, change/akkoord en technische tests (laboproef) | 20/10 |
+| 4 — Communicatie | Inschrijving, privacy, gedragscode en bericht zijn goedgekeurd       | Communicatiepakket en akkoord                   | 20/10 |
+| 5 — Uitvoering | Crew, support, noodnummers, rollback en cleanup zijn klaar           | Dry-run, draaiboek en formele go/no-go          | na Gate 4, vóór opbouw |
 
 Geen akkoord betekent geen aansluiting op het campusnetwerk en geen communicatie alsof het evenement officieel doorgaat.
 
-## 10. Planning en mijlpalen
+## 10. Fasesplan
 
-|  Week | Resultaat                                                                        |
-| ----: | -------------------------------------------------------------------------------- |
-|     1 | Intake, repository, logboek, brainstorm en eerste stakeholdercontact             |
-|     2 | Conceptnota, datumopties, studentenbevraging, stakeholders, RACI en budgetraming |
-|     3 | Aanvragen voor Stuvo, lokaalbeheer, preventie en IT                              |
-|     4 | Architectuur, dataflow, dreigingen, resourcebudget en proof-of-concept           |
-|     5 | Voorlopig netwerk-, stroom-, veiligheids- en communicatieplan; technische gate   |
-|     6 | Kernflows, gameserver, servicedesk en eerste runbooks                            |
-|     7 | Technische laboproef, caching, monitoring, security en herstel                   |
-|     8 | Operations, logging, back-up, restore en incidentrunbooks                        |
-|     9 | Communicatie na akkoord, inschrijving, automatisering en definitief draaiboek    |
-|    10 | Dry-run/generale repetitie en gebruikerstest                                     |
-|    11 | Stabilisatie, capaciteit, rollback en formele uitvoerings-go/no-go               |
-| Event | Uitvoering, monitoring, support, incidentlog en cleanup                          |
-|    12 | Evaluatie, gegevenscleanup en overdracht                                         |
+> **Bijgewerkt (16 okt).** De evenementdatum is **donderdag 22 oktober 2026, 18:00–24:00**, in Stuvo. Het oorspronkelijke 12-wekenmodel uit augustus is niet meer toepasbaar: het event valt in week 19, waardoor de voorbereiding en alle gates in de lopende weken intensiever moeten worden opgepakt. Het project wordt daarom ingedeeld in drie fasen met **20/10 als hard keerpunt** (alle gates gesloten).
 
-Elke week bevat minstens bijgewerkte issues, één beslissing of resultaat, test-/validatiebewijs, risico’s/blokkades en een korte reflectie op resources en volgende stappen.
+| Fase | Tijd | Doel | Levert |
+|------|------|------|--------|
+| 1 — Voorbereiding | 15/10 → 20/10 | Alle gates sluiten, laboproef uitvoeren, leaderboard opzetten | Gates 1–5 gesloten; SLO-drempelwaarden vast; leaderboard-opzet |
+| 2 — Eventweek | 21/10 → 22/10 | Opbouw in Stuvo, dry-run, formele go/no-go, event 18:00–24:00 | Geslaagde dry-run; uitgevoerde LAN-party; incidentlog |
+| 3 — Nadien | 23/10 → oplevering | Evaluatie, gegevenscleanup, overdracht | Evaluatierapport; overdrachtsdossier; eindlogboek |
+
+De taakdetail per taak met eigenaar en deadline staat in de [todo](todo.md); de RACI per taak in de [raci-matrix](raci-matrix.md).
 
 ## 11. Techniek, security en operations
 
@@ -180,7 +181,7 @@ Elke week bevat minstens bijgewerkte issues, één beslissing of resultaat, test
 - Gebruik geen secrets, tokens, private keys of ongeschoonde exports in Git.
 - Gebruik persoonlijke beheeraccounts, least privilege, hostfirewall, updates, tijdsynchronisatie en logrotatie.
 - Documenteer per service doel, eigenaar, resources, netwerkflows, configuratie, monitoring, back-up, restore, rollback en stopprocedure.
-- Test restore op een aparte omgeving; een Proxmox-snapshot alleen is geen volledige herstelstrategie.
+- De laboproef (week 17) toetst de 8 verplichte scenario's op de labomgeving (Proxmox/Smith), inclusief test restore op een aparte omgeving. De dry-run herhaalt dezelfde scenario's op de eventhardware in Stuvo.
 - Beperk monitoring en logging tot wat nodig is voor werking en diagnose; inspecteer geen inhoudelijk deelnemersverkeer.
 
 ## 12. Oplevering en bewijs
@@ -199,18 +200,16 @@ Het overdrachtsdossier bevat minimaal:
 
 ## 13. Open beslissingen
 
-- definitieve groepsleden en taakverdeling;
-- opdrachtgever, product owner en technische coach;
-- doelgroep, datum, locatie en deelnemerscapaciteit;
-- budget en resourcequota;
+- deelnemerscapaciteit: wordt door IEEE bepaald en hierin opgeschreven;
 - IT-goedgekeurde uplink en toegelaten netwerkdiensten;
-- toegelaten cachingplatformen en gameservers;
-- keuze welke Should/Could-onderdelen haalbaar zijn.
+- toegelaten cachingplatformen;
+- crew en dry-run: de eventcrew wordt afgestemd met IEEE en de dry-run ingepland na Gate 4 (eigenaar: Kyell);
+- samenwerking IEEE: de afstemming van gates en de splitsing van bewijsstukken wordt bevestigd (contact: Jonas Rollier).
 
 ## 14. Goedkeuring
 
 | Rol                          | Beslissing        | Datum          | Opmerking                                        |
 | ---------------------------- | ----------------- | -------------- | ------------------------------------------------ |
-| Opdrachtgever/docent         | Nog te beoordelen | Nog te bepalen | Projectplan bespreken vóór technische uitvoering |
-| IT/netwerkbeheer             | Nog te beoordelen | Nog te bepalen | Nodig voor netwerk- en cachingchanges            |
-| Stuvo/gebouwbeheer/preventie | Nog te beoordelen | Nog te bepalen | Nodig voor evenement en locatie                  |
+| Opdrachtgever/docent (Leroy) | Open              | Nog te bepalen | Gate 1-bespreking: 16/10; alle gates vóór 20/10  |
+| IT/netwerkbeheer             | Open              | Nog te bepalen | Nodig voor netwerk- en cachingchanges            |
+| Stuvo/gebouwbeheer/preventie | Open              | Nog te bepalen | Nodig voor evenement en locatie (contact via Jules) |

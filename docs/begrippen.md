@@ -1,6 +1,6 @@
 # Begrippenlijst
 
-Uitleg van de vaktermen in de netwerkdocumenten, alfabetisch. Elk begrip heeft een korte uitleg en wat het in dit project betekent. Gebruikt in o.a. [SCHAALBAAR_ONTWERP.md](../netwerkontwerp/SCHAALBAAR_ONTWERP.md).
+Uitleg van de vaktermen in de netwerkdocumenten, alfabetisch. Elk begrip heeft een korte uitleg en wat het in dit project betekent. Gebruikt in o.a. [schaalbaar-ontwerp.md](../netwerk/schaalbaar-ontwerp.md).
 
 ## .env-bestand
 

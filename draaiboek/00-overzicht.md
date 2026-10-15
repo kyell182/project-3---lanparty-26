@@ -1,12 +1,12 @@
 # Draaiboek LAN-party: overzicht
 
-Ik heb dit draaiboek geschreven voor VIVES (organisatie, IT, Stuvo, lokaalbeheer en preventie). Jullie kunnen het bij elke volgende LAN-party opnieuw gebruiken, samen met een studentenvereniging of een andere organisator. Vaktermen staan in de [begrippenlijst](../gedeeld/BEGRIPPEN.md).
+Ik heb dit draaiboek geschreven voor VIVES (organisatie, IT, Stuvo, lokaalbeheer en preventie). Jullie kunnen het bij elke volgende LAN-party opnieuw gebruiken, samen met een studentenvereniging of een andere organisator. Vaktermen staan in de [begrippenlijst](../docs/begrippen.md).
 
 ## Zo gebruik je dit draaiboek
 
 1. Kopieer de [kerngegevens](#kerngegevens-per-editie) en vul ze in voor deze editie.
-2. Werk de fases af in volgorde: [voorbereiding](01_VOORBEREIDING.md), [opbouw](02_OPBOUW.md), [evenement](03_EVENEMENT.md), [afbraak en evaluatie](04_AFBRAAK_EN_EVALUATIE.md). Sjablonen staan in de [bijlagen](05_BIJLAGEN.md).
-3. Noteer beslissingen, tests en incidenten in het [logboek](../logging/logboek.md).
+2. Werk de fases af in volgorde: [voorbereiding](01-voorbereiding.md), [opbouw](02-opbouw.md), [evenement](03-evenement.md), [afbraak en evaluatie](04-afbraak-en-evaluatie.md). Sjablonen staan in de [bijlagen](05-bijlagen.md).
+3. Noteer beslissingen, tests en incidenten in het [logboek](../organisatie/logboek.md).
 4. Pas dit draaiboek na de evaluatie aan, zodat de volgende editie ervan leert.
 
 Zo loopt het van de eerste voorbereiding tot de volgende editie:
@@ -19,7 +19,7 @@ graph LR
     A -->|"Verbeterpunten verwerken in het draaiboek"| V
 ```
 
-Mijn netwerkontwerp voor een LAN van 70 staat in [LAN_70_OPSTELLING.md](../lan-70/LAN_70_OPSTELLING.md). Voor andere groottes zie het [schaalbare ontwerp](../netwerkontwerp/SCHAALBAAR_ONTWERP.md).
+Mijn netwerkontwerp voor een LAN van 70 staat in [lan-70-opstelling.md](../netwerk/lan-70-opstelling.md). Voor andere groottes zie het [schaalbare ontwerp](../netwerk/schaalbaar-ontwerp.md).
 
 ## Kerngegevens per editie
 
@@ -138,4 +138,4 @@ Geen akkoord voor het evenement betekent een tabletopoefening en een goedgekeurd
 
 ## Volgende stap
 
-Begin met de [voorbereiding](01_VOORBEREIDING.md).
+Begin met de [voorbereiding](01-voorbereiding.md).

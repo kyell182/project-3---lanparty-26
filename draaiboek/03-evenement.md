@@ -1,6 +1,6 @@
 # Fase 3: Evenement
 
-Tijdens het evenement staat de servicedesk voor de deelnemers klaar en bewaakt de netwerkverantwoordelijke het dashboard. Vorige fase: [opbouw](02_OPBOUW.md). Volgende fase: [afbraak en evaluatie](04_AFBRAAK_EN_EVALUATIE.md).
+Tijdens het evenement staat de servicedesk voor de deelnemers klaar en bewaakt de netwerkverantwoordelijke het dashboard. Vorige fase: [opbouw](02-opbouw.md). Volgende fase: [afbraak en evaluatie](04-afbraak-en-evaluatie.md).
 
 ## Dagelijkse controles
 
@@ -13,7 +13,7 @@ Tijdens het evenement staat de servicedesk voor de deelnemers klaar en bewaakt d
 
 ## Servicedesk: triage
 
-Elke vraag wordt opgenomen in de incidentlog (sjabloon in de [bijlagen](05_BIJLAGEN.md)). Noteer **geen** persoonsgegevens.
+Elke vraag wordt opgenomen in de incidentlog (sjabloon in de [bijlagen](05-bijlagen.md)). Noteer **geen** persoonsgegevens.
 
 Het schema hieronder is de vaste route van een melding. De tabel met bekende problemen volgt daarna.
 
@@ -81,4 +81,4 @@ De evenementcoördinator overweegt een pauze of stop bij:
 
 ## Volgende stap
 
-Na de sluiting begint de [afbraak](04_AFBRAAK_EN_EVALUATIE.md).
+Na de sluiting begint de [afbraak](04-afbraak-en-evaluatie.md).

@@ -1,6 +1,6 @@
 # Monitoring-stack
 
-Met één commando start de volledige monitoring van de LAN-party: Telegraf, InfluxDB en Grafana, met de datasource, het dashboard en de alarmen al ingesteld. De achtergrond en de gekozen KPI's staan in [MONITORING_STACK.md](../netwerkontwerp/MONITORING_STACK.md).
+Met één commando start de volledige monitoring van de LAN-party: Telegraf, InfluxDB en Grafana, met de datasource, het dashboard en de alarmen al ingesteld. De achtergrond en de gekozen KPI's staan in [monitoring-stack.md](../netwerk/monitoring-stack.md).
 
 **Nieuw hierin? Begin met de [HANDLEIDING](HANDLEIDING.md).** Die legt stap voor stap uit hoe je `.env` invult en wat elk onderdeel doet, zonder voorkennis.
 
@@ -126,7 +126,7 @@ graph TD
     F --> G
 ```
 
-De vervolgstappen per symptoom staan ook in het [draaiboek](../draaiboek/03_EVENEMENT.md), onder Bekende problemen en oplossingen.
+De vervolgstappen per symptoom staan ook in het [draaiboek](../draaiboek/03-evenement.md), onder Bekende problemen en oplossingen.
 
 ## De alarmen
 
@@ -199,7 +199,7 @@ E-mail werkt pas nadat je SMTP instelt in Grafana. Dat staat niet in deze stack.
 - `.env` staat in `.gitignore` en hoort nooit in git. Alleen de `.env.example`-bestanden staan in de repository.
 - Telegraf en Grafana gebruiken hetzelfde InfluxDB-admintoken. Voor een langere opstelling maak je aparte tokens met alleen schrijf- en leesrechten.
 - Toegang tot de Docker-socket (voor metingen per container) staat standaard uit, omdat die in feite root-rechten op de host geeft.
-- De wachtwoorden die vroeger in `MONITORING_STACK.md` stonden, zijn gecommit. Beschouw ze als verbrand.
+- De wachtwoorden die vroeger in `monitoring-stack.md` stonden, zijn gecommit. Beschouw ze als verbrand.
 - SNMP versie 2c is de standaard. SNMPv3 is veiliger.
 
 Getest op Docker Desktop (Windows): de stack start, Grafana laadt de datasource, het dashboard en de alarmen automatisch, de dashboardqueries zijn geldig, ping, CPU en geheugen leveren data, en de SNMP-keten werkt tegen een nagebootste agent.

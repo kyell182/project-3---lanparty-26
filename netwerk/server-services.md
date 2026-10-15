@@ -62,4 +62,4 @@ Om te voorkomen dat een grote internetdownload (bijvoorbeeld een game die nog ni
 
 ## 4. Termlijst
 
-De vetgedrukte termen in dit document worden uitgelegd in de [begrippenlijst](../gedeeld/BEGRIPPEN.md): [DNS Redirection](../gedeeld/BEGRIPPEN.md#dns-override), [NVMe SSD's](../gedeeld/BEGRIPPEN.md#nvme-ssd), [RSTP](../gedeeld/BEGRIPPEN.md#rstp), [DHCP Snooping](../gedeeld/BEGRIPPEN.md#dhcp-snooping), [Trusted en Untrusted](../gedeeld/BEGRIPPEN.md#trusted-en-untrusted), [Traffic Shaping](../gedeeld/BEGRIPPEN.md#traffic-shaping) en de [Realtime-, Default- en Bulk Queue](../gedeeld/BEGRIPPEN.md#queues).
+De vetgedrukte termen in dit document worden uitgelegd in de [begrippenlijst](../docs/begrippen.md): [DNS Redirection](../docs/begrippen.md#dns-override), [NVMe SSD's](../docs/begrippen.md#nvme-ssd), [RSTP](../docs/begrippen.md#rstp), [DHCP Snooping](../docs/begrippen.md#dhcp-snooping), [Trusted en Untrusted](../docs/begrippen.md#trusted-en-untrusted), [Traffic Shaping](../docs/begrippen.md#traffic-shaping) en de [Realtime-, Default- en Bulk Queue](../docs/begrippen.md#queues).

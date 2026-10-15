@@ -61,7 +61,7 @@ deze handleiding is bedoeld voor mensen die een pc willen ombouwen naar een arca
     ```
 
     het scherm zou er dan als volgt moeten uitzien:
-    ![retropi install menu](./assets/retropie_install_menu.png)
+    ![retropi install menu](assets/retropie-install-menu.png)
 
 6. volg de instructies op het scherm om retropi te installeren. Kies voor de optie "Basic Install" om de standaard installatie uit te voeren. ( deze is hetzelfde als de image die op een sd kaart wordt gezet voor een raspberry pi )
 

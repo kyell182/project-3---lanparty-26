@@ -1,6 +1,8 @@
 # Studentenbevraging — Microsoft Forms
 
-> Vragenlijst voor studenten over de inhoud en praktische haalbaarheid van de LAN-party.
+> **Gearchiveerd — niet langer van toepassing.** De inschrijving wordt zelf uitgevoerd door IEEE student branch Brugge (beslissing 2026-10-16). Dit document wordt als referentie voor eerdere uitwerking bewaard.
+>
+> _Vragenlijst voor studenten over de inhoud en praktische haalbaarheid van de LAN-party._
 
 ## 1. Doel van de bevraging
 
@@ -17,14 +19,14 @@ De bevraging is bedoeld voor planning, niet voor definitieve inschrijving.
 
 ## 2. Instellingen in Microsoft Forms
 
-- **Titel:** Studentenbevraging LAN-party 2026
+- **Titel:** Studentenbevraging LAN-party 26
 - **Beschrijving:** We onderzoeken hoe een veilige en inclusieve LAN-party voor studenten eruit kan zien. De antwoorden helpen ons om games, activiteiten, timing, snacks en praktische ondersteuning te plannen. Invullen duurt ongeveer 3–5 minuten. Dit is nog geen inschrijving voor het evenement.
 
 ## 3. Form
 
 Hieronder volgt de bevraging zoals deze op de form komt:
 
-### LAN-party 2026
+### LAN-party 26
 We onderzoeken hoe een veilige en inclusieve LAN-party voor studenten eruit kan zien. Een LAN-party is een bijeenkomst waar mensen fysiek samenkomen met hun eigen devices, zoals laptops, om deze via een lokaal netwerk (LAN) met elkaar te verbinden en games te spelen. De antwoorden helpen ons om games, activiteiten, timing en praktische ondersteuning te plannen. Invullen duurt ongeveer 3–5 minuten. Dit is nog geen volledige vertegenwoordiging of inschrijving voor het evenement.
 
 #### 1. Welk onderdeel van een LAN-party spreekt je het meest aan? *Meerkeuze.* 
