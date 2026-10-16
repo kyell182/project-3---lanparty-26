@@ -105,25 +105,41 @@ def verwijder_game(gid: str) -> bool:
 # --------------------------------------------------------------- spelers
 
 def spelers() -> list:
-    """Alle geregistreerde pseudoniemen."""
+    """Alle geregistreerde pseudoniemen (met apparaat-id voor de antispam-limit)."""
     with _lek:
         data = _laad()
         return [
-            {"id": sid, "naam": s["naam"]}
+            {"id": sid, "naam": s["naam"], "apparaat": s.get("apparaat", "")}
             for sid, s in data["spelers"].items()
         ]
 
 
-def voeg_speler_toen(naam: str) -> str:
-    """Registreer een pseudoniem; identieke naam levert dezelfde speler op."""
+# Antispam: maximaal dit aantal nieuwe namen per apparaat (device-cookie).
+MAX_SpelERS_PER_APPARAAT = 3
+
+
+class TeVeelSpelersError(ValueError):
+    """Apparaat heeft reeds de maximumaantal namen geregistreerd."""
+
+
+def voeg_speler_toen(naam: str, apparaat: str = "") -> str:
+    """Registreer een pseudoniem; identieke naam levert dezelfde speler op.
+    Met apparaat-id: maximaal MAX_SpelERS_PER_APPARAAT nieuwe namen per apparaat."""
     naam = valideer_naam(naam)
     with _lek:
         data = _laad()
         voor_schrijf = {s["naam"].lower(): sid for sid, s in data["spelers"].items()}
         if naam.lower() in voor_schrijf:
             return voor_schrijf[naam.lower()]
+        if apparaat:
+            tellen = sum(1 for s in data["spelers"].values() if s.get("apparaat") == apparaat)
+            if tellen >= MAX_SpelERS_PER_APPARAAT:
+                raise TeVeelSpelersError(
+                    "This device has already registered 3 players. "
+                    "A crew member can add more names for you."
+                )
         sid = _nieuw_id()
-        data["spelers"][sid] = {"naam": naam}
+        data["spelers"][sid] = {"naam": naam, **({"apparaat": apparaat} if apparaat else {})}
         _sluit(data)
         return sid
 

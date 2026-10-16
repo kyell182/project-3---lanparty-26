@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>LAN-Party 26 — Register your Player name</title>
+<title>LAN-Party 26 — Player Registration</title>
 <style>
   :root {
     --bg: #0b0f1f;
@@ -38,12 +38,10 @@
 </head>
 <body>
 <div class="kaart">
-  <h1>LAN-PARTY <span>26</span></h1>
-  <p>Pick your <strong>Player</strong> name for the leaderboard.
-  No real name, no email — only what shows up on the screen.
-  The LAN Admin can reject or remove a name.</p>
-  <input id="naam" placeholder="e.g. DarkKnight" maxlength="40" autocomplete="off">
-  <button id="verzenden">Register my name</button>
+  <h1><span>LAN</span>-PARTY <span>26</span></h1>
+  <p>Enter Player name for the leaderboard.</p>
+  <input id="naam" maxlength="40" autocomplete="off">
+  <button id="verzenden">Register</button>
   <div id="melding"></div>
 </div>
 <script>
@@ -55,8 +53,13 @@ document.getElementById("verzenden").onclick = async () => {
     body: JSON.stringify({ naam: document.getElementById("naam").value }),
   });
   const d = await r.json();
-  if (d.ok) {
-    m.textContent = "Registered! Your name appears on the screen with your first score.";
+  if (d.ok && d.nieuw === false) {
+    m.textContent = "That name is already registered. You can start playing under it — or pick another name if it was a mistake.";
+    m.className = "fout";
+  } else if (d.ok) {
+    m.textContent = d.gebruikt >= d.limit
+      ? "Registered! This device has reached its limit of " + d.limit + " player names."
+      : "Registered! Your name appears on the screen with your first score.";
     m.className = "ok";
   } else {
     m.textContent = d.fout || "Try again.";

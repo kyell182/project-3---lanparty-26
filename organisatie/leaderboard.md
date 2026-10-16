@@ -1,6 +1,16 @@
 # Leaderboard — LAN-party 26
 
-> De leaderboard is een van de twee hoofdtaken van ons project (naast de inrichting en uitvoering in Stuvo). **Ontwikkeling is gestart (week 16)**; de technologie wordt deze week gekozen en in de Stuvo-minimale infra opgezet.
+> ## ⚠️ Status: DEPRECATED — vervangen door het LAN-portaal
+> De oorspronkelijke Python-leaderboard (zie `leaderboard/` in de repo) wordt **niet meer gebruikt**.
+> **Kyell** heeft het uitgrown tot een volwaardig **LAN-portaal**:
+> [**github.com/kyell182/lan-portaal**](https://github.com/kyell182/lan-portaal)
+> (Docker, volledig offline; scoreboard + toernooien met live brackets, edities,
+> zitplan, prijzen, Discord-meldingen, PWA). Dit document blijft de
+> **oorspronkelijke opdracht- en scope-eisen** van de hoofdtak bewaren — de
+> privacykaders (pseudoniem, lokaal bewaren, verwijdering binnen 1 week) blijven
+> van toepassing op het portaal.
+
+> De leaderboard was een van de twee hoofdtaken van ons project (naast de inrichting en uitvoering in Stuvo).
 
 ## 1. Doel
 
@@ -53,7 +63,7 @@ De keuze wordt vastgelegd in [overzicht.md](../netwerk/overzicht.md) zodra de se
 
 | Veld | Waarde |
 |---|---|
-| Status | Ontwikkeling gestart (week 16) — technologiekeuze en opzet in Stuvo-minimale infra lopen |
-| Eigenaar | Jules (back-up: Kyell) |
+| Status | **DEPRECATED** — vervangen door het [LAN-portaal](https://github.com/kyell182/lan-portaal) van Kyell (Docker, offline). De Python-code blijft ter referentie. |
+| Eigenaar | oorspr. Jules (back-up Kyell); portaal: Kyell |
 | Verbonden gate | Gate 3 (Techniek) en Gate 4 (Communicatie) — beide vóór 20/10 |
-| Datum | 2026-10-16 |
+| Datum | 2026-10-16 (deprecation: zie logboek) |

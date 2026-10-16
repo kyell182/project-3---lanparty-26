@@ -114,6 +114,32 @@ class Handler(BaseHTTPRequestHandler):
         cookie = http.cookies.SimpleCookie(self.headers.get("Cookie", ""))
         return cookie["crew"].value if "crew" in cookie else None
 
+    def _apparaat_cookie(self) -> str:
+        """Id van dit apparaat: leest de cookie, of maakt er één (voor antispam-limit)."""
+        cookie = http.cookies.SimpleCookie(self.headers.get("Cookie", ""))
+        if "apparaat" in cookie:
+            return cookie["apparaat"].value
+        nieuw = secrets.token_hex(16)
+        self._apparaat_om_te_sturen = (f"apparaat={nieuw}; Path=/; SameSite=Strict; Max-Age=31536000")
+        return nieuw
+
+    def _api_speler(self, data: dict) -> None:
+        """POST /api/speler: openbare naamregistratie met antispam-limit per apparaat."""
+        apparaat = self._apparaat_cookie()
+        naam = str(data.get("naam", ""))
+        bestaand = any(s["naam"].lower() == naam.strip().lower() for s in opslag.spelers())
+        sid = opslag.voeg_speler_toen(naam, apparaat)
+        koppen = {}
+        if getattr(self, "_apparaat_om_te_sturen", None):
+            koppen["Set-Cookie"] = self._apparaat_om_te_sturen
+        if bestaand:
+            self._json(200, {"ok": True, "id": sid, "nieuw": False}, koppen or None)
+        else:
+            gebruik = sum(1 for s in opslag.spelers() if s.get("apparaat") == apparaat)
+            self._json(200, {"ok": True, "id": sid, "nieuw": True,
+                             "limit": opslag.MAX_SpelERS_PER_APPARAAT,
+                             "gebruikt": gebruik}, koppen or None)
+
     # -------------------------------------------------------------- routes
 
     def do_GET(self):
@@ -167,6 +193,18 @@ class Handler(BaseHTTPRequestHandler):
         pad = self.path.split("?", 1)[0]
         data = self._lichaam_lezen()
         try:
+            if pad == "/api/speler":
+                # Openbare registratie (registreer-pagina); geen crew-login nodig.
+                try:
+                    self._api_speler(data)
+                except opslag.TeVeelSpelersError as e:
+                    koppen = {}
+                    if getattr(self, "_apparaat_om_te_sturen", None):
+                        koppen["Set-Cookie"] = self._apparaat_om_te_sturen
+                    self._json(403, {"fout": str(e)}, koppen or None)
+                except ValueError as e:
+                    self._json(400, {"fout": str(e)})
+                return
             if pad == "/crew/aanmelden":
                 zelf = wachtwoord_inrichten()
                 if secrets.compare_digest(str(data.get("wachtwoord", "")), zelf):
@@ -206,11 +244,13 @@ class Handler(BaseHTTPRequestHandler):
             elif pad == "/crew/reset":
                 opslag.reset()
                 self._json(200, {"ok": True})
-            elif pad == "/api/speler":
-                sid = opslag.voeg_speler_toen(str(data.get("naam", "")))
-                self._json(200, {"ok": True, "id": sid})
             else:
                 self._json(404, {"fout": "Unknown route."})
+        except opslag.TeVeelSpelersError as e:
+            koppen = {}
+            if getattr(self, "_apparaat_om_te_sturen", None):
+                koppen["Set-Cookie"] = self._apparaat_om_te_sturen
+            self._json(403, {"fout": str(e)}, koppen or None)
         except ValueError as e:
             self._json(400, {"fout": str(e)})
         except Exception:

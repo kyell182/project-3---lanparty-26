@@ -119,7 +119,7 @@ De groepsleden (Kyell en Jules) en de taakverdeling zijn definitief. Voor elke k
 | Locatie, tafels en stroom      | Jules             | Kyell          | Actief |
 | Netwerk en bekabeling          | Kyell             | Kyell          | Actief |
 | Cachingserver                  | Kyell             | Jules          | Actief |
-| Leaderboard (core)             | Jules             | Kyell          | Actief |
+| LAN-portaal (ex-leaderboard)   | Kyell             | Jules          | Actief |
 | Lokale gameservers (RetroPie)  | Kyell             | Kyell          | Actief |
 | VR / Pico 4                    | Jules             | Jules          | Actief |
 | Monitoring, back-up en herstel | Kyell             | Kyell          | Actief |
@@ -127,7 +127,7 @@ De groepsleden (Kyell en Jules) en de taakverdeling zijn definitief. Voor elke k
 | Privacy                        | Jules             | Jules          | Actief |
 | Communicatie en gedragscode    | Jules             | Jules          | Actief |
 | Support en incidenten          | Kyell + Jules + crew | Kyell     | Actief |
-| Draaiboek en uitvoering        | Jules             | Kyell          | Actief |
+| Draaiboek en uitvoering        | Kyell             | Jules          | Actief |
 | Evaluatie en overdracht        | Jules + Kyell     | Jules + Kyell  | Actief |
 
 De groep werkt met issues, acceptatiecriteria, testbewijs en documentatie. Betekenisvolle wijzigingen verlopen via review/pull request. Een issue wordt pas gesloten wanneer uitvoering, validatie, documentatie en risico/rollback zijn geregistreerd.
@@ -167,7 +167,7 @@ Geen akkoord betekent geen aansluiting op het campusnetwerk en geen communicatie
 
 | Fase | Tijd | Doel | Levert |
 |------|------|------|--------|
-| 1 — Voorbereiding | 15/10 → 20/10 | Alle gates sluiten, laboproef uitvoeren, leaderboard opzetten | Gates 1–5 gesloten; SLO-drempelwaarden vast; leaderboard-opzet |
+| 1 — Voorbereiding | 15/10 → 20/10 | Alle gates sluiten, laboproef uitvoeren, LAN-portaal opzetten | Gates 1–5 gesloten; SLO-drempelwaarden vast; LAN-portaal-opzet |
 | 2 — Eventweek | 21/10 → 22/10 | Opbouw in Stuvo, dry-run, formele go/no-go, event 18:00–24:00 | Geslaagde dry-run; uitgevoerde LAN-party; incidentlog |
 | 3 — Nadien | 23/10 → oplevering | Evaluatie, gegevenscleanup, overdracht | Evaluatierapport; overdrachtsdossier; eindlogboek |
 

@@ -1,5 +1,21 @@
 # Leaderboard — LAN-Party 26
 
+> ## ⚠️ DEPRECATED — vervangen door het LAN-portaal
+> Dit Python-stdlib leaderboard wordt **niet meer gebruikt** voor de LAN-Party 26.
+> **Kyell** heeft het uitgrown tot een volwaardig **LAN-portaal**:
+> [**github.com/kyell182/lan-portaal**](https://github.com/kyell182/lan-portaal).
+>
+> Het portaal is volledig offline draaiend (Docker) en omvat naast het
+> scoreboard ook toernooien met live brackets (knock-out, Swiss, poules, …),
+> edities/events, zitplan, prijzen, Discord-meldingen en een PWA. Alleen admins
+> melden aan; het publiek ziet alles live bijwerken — handig op een beamer.
+>
+> Deze code wordt hierbij **behouden ter referentie** (en voor de documentatie
+> van de oorspronkelijke eisen); hij wordt niet meer onderhouden of uitgerold.
+
+<details>
+<summary>Originele documentatie (Python-leaderboard, ter referentie)</summary>
+
 Live scoreboard voor de LAN-Party 26 (Stuvo). De **LAN Admin** voert scores in
 via een webpagina; het groot scherm toont per-game top-10 én een globale
 totaalstand (met de beste game per speler), en ververst zich zelf om de paar
@@ -91,3 +107,5 @@ Daarna staat het systeem weer leeg, klaar voor het volgende event.
 | `static/registreer.html` | Spelers kiezen zelf een Player-naam. |
 | `data/` | Lokaal JSON-bestand (git-geïnformeerd; te verwijderen). |
 | `config.json` | LAN Admin-wachtwoord (git-geïnformeerd; te verwijderen). |
+
+</details>

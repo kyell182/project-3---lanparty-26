@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>LAN Admin — Leaderboard</title>
+<title>LAN — Admin Leaderboard</title>
 <style>
   :root {
     --bg: #0b0f1f;
@@ -58,9 +58,9 @@
 </head>
 <body>
 <header>
-  <h1>LAN <span>Admin</span></h1>
+  <h1><span>LAN</span> — Admin Leaderboard</h1>
   <div>
-    <a class="klein" href="/" target="_blank" style="color:var(--sub);margin-right:14px">Screen ↗</a>
+    <a class="klein" href="/" target="_blank" style="color:var(--sub);margin-right:14px">Go to Leaderboard</a>
     <button id="afmelden" class="gevaar">Log out</button>
   </div>
 </header>
@@ -93,7 +93,7 @@
       <div class="rij" style="grid-template-columns:1fr auto;align-items:end">
         <div>
           <label for="nieuwe-speler">New player</label>
-          <input id="nieuwe-speler" placeholder="e.g. DarkKnight" maxlength="40">
+          <input id="nieuwe-speler" maxlength="40">
         </div>
         <button id="speler-toevoegen">Add</button>
       </div>
@@ -101,7 +101,7 @@
         <thead><tr><th>Player</th><th></th></tr></thead>
         <tbody id="spelers-body"></tbody>
       </table>
-      <div class="klein" id="spelers-leeg">No players yet — add one above or wait for self-registration.</div>
+      <div class="klein" id="spelers-leeg">No players yet.</div>
     </section>
 
     <section>
@@ -109,7 +109,7 @@
       <div class="rij" style="grid-template-columns:1fr auto;align-items:end">
         <div>
           <label for="nieuwe-game">New game</label>
-          <input id="nieuwe-game" placeholder="e.g. Fortnite" maxlength="60">
+          <input id="nieuwe-game" maxlength="60">
         </div>
         <button id="game-toevoegen">Add</button>
       </div>
@@ -122,17 +122,17 @@
   </div>
 
   <section>
-    <h2>History (last 20)</h2>
+    <h2>History</h2>
     <table>
       <thead><tr><th>When</th><th>Player</th><th>Game</th><th>Score</th><th></th></tr></thead>
       <tbody id="recent-body"></tbody>
     </table>
-    <div class="klein" id="recent-leeg">No scores entered yet.</div>
+    <div class="klein" id="recent-leeg">No history yet.</div>
   </section>
 
   <section style="border-color:var(--rood)">
     <h2 style="color:var(--rood)">Danger Zone</h2>
-    <p class="klein">Removes <strong>all</strong> games, players and scores. For the day after the event (privacy: keep data &le; 1 week).</p>
+    <p class="klein">Removes <strong>all</strong> games, players and scores.</p>
     <button class="gevaar" id="reset">Wipe All Data</button>
   </section>
 </main>

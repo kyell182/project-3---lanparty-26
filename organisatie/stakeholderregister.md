@@ -12,8 +12,8 @@
 
 | Stakeholder | Rol | Belang | Invloed | Communicatie | Eigenaar |
 |---|---|---|---|---|---|
-| Kyell | Projectcoördinatie, netwerk, caching, RetroPie, Arduino, monitoring, laboproef, documentatie | Hoog | Hoog | Groepsgesprekken, GitHub, logboek | Kyell |
-| Jules | Inrichting en uitvoering in Stuvo, stroom, leaderboard, VR (Pico 4 / Quake3Quest), registratie, communicatie, privacy | Hoog | Hoog | Groepsgesprekken, GitHub, logboek | Jules |
+| Kyell | Projectcoördinatie, netwerk, caching, RetroPie, Arduino, monitoring, laboproef, documentatie, **LAN-portaal** (ex-leaderboard, [kyell182/lan-portaal](https://github.com/kyell182/lan-portaal)) | Hoog | Hoog | Groepsgesprekken, GitHub, logboek | Kyell |
+| Jules | Inrichting en uitvoering in Stuvo, stroom, VR (Pico 4 / Quake3Quest), registratie, communicatie, privacy | Hoog | Hoog | Groepsgesprekken, GitHub, logboek | Jules |
 
 ## Externe stakeholders
 

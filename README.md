@@ -53,7 +53,7 @@ graph TD
 
 ## Stand van zaken
 
-Stand op 16 oktober 2026. De LAN-party vindt plaats op **donderdag 22 oktober 2026, van 18:00 tot 24:00**, in **Stuvo**. De overkoepelende organisatie (inschrijving, budget en communicatie) is in handen van **IEEE student branch Brugge** (aanspreekpunt: Jonas Rollier); ons team — **Kyell en Jules** — is verantwoordelijk voor de inrichting en uitvoering in Stuvo en voor de leaderboard. Alle vijf de go/no-go-gates sluiten **vóór 20/10**. Controleer het [logboek](organisatie/logboek.md) voor de laatste beslissingen.
+Stand op 16 oktober 2026. De LAN-party vindt plaats op **donderdag 22 oktober 2026, van 18:00 tot 24:00**, in **Stuvo**. De overkoepelende organisatie (inschrijving, budget en communicatie) is in handen van **IEEE student branch Brugge** (aanspreekpunt: Jonas Rollier); ons team — **Kyell en Jules** — is verantwoordelijk voor de inrichting en uitvoering in Stuvo en voor het [LAN-portaal](https://github.com/kyell182/lan-portaal) (de oorspronkelijke Python-leaderboard is deprecated; zie `leaderboard/` ter referentie). Alle vijf de go/no-go-gates sluiten **vóór 20/10**. Controleer het [logboek](organisatie/logboek.md) voor de laatste beslissingen.
 
 | Onderdeel | Stand |
 | --- | --- |
@@ -64,7 +64,7 @@ Stand op 16 oktober 2026. De LAN-party vindt plaats op **donderdag 22 oktober 20
 | Monitoring | Getest met nagebootste apparaten, nog niet met echte switches en pfSense |
 | LanCache en gameservers | Nog niet gebouwd |
 | Labproef met de 8 scenario's | Week 17 (Kyell); SLO-drempelwaarden worden tijdens de laboproef vastgelegd |
-| Leaderboard | Ontwikkeling gestart (week 16, Jules; back-up Kyell) |
+| Leaderboard / LAN-portaal | **Vervangen door het [LAN-portaal](https://github.com/kyell182/lan-portaal)** van Kyell (Docker, offline; toernooien + live brackets + zitplan + PWA). De oorspronkelijke Python-leaderboard (`leaderboard/`) is deprecated en blijft ter referentie. |
 | Go/no-go-gates | Alle 5 sluiten vóór 20/10; Gate 1 (Concept) wordt op 16/10 met Leroy Mathieu besproken |
 ## Doelstellingen
 
@@ -141,11 +141,11 @@ Vul de namen aan en wijs voor elke taak een verantwoordelijke en eventueel een b
 | VR / Pico 4 (Quake3Quest) | Jules |  | Bezig | Overgenomen na vertrek van Jason |
 | RetroPie en minicomputer | Kyell |  | Bezig | Testen op eventhardware |
 | Arduino-controller | Kyell |  | Bezig | Mogelijkheden onderzoeken |
-| Games en toernooien | Jules | Kyell | Bezig | Leaderboard volgt de toernooirondes |
-| Boardgames en nevenactiviteiten | Jules |  | Bezig | Spellenlab bekijken |
+| Games en toernooien | Jules | Kyell | Bezig | LAN-portaal volgt de toernooirondes |
+| Boardgames en nevenactiviteiten | Jules |  | Afgevaardigd | Geen boardgames, enkel video games |
 | Gedragscode en disclaimer | via IEEE | Jules | Afgevaardigd | Afstemmen met IEEE-communicatie |
 | Support en incidenten | Kyell + Jules | crew | Bezig | Crew wordt afgestemd met IEEE |
-| **Leaderboard** | Jules | Kyell | Bezig | Hoofdtaak; ontwikkeling gestart week 16, zie [leaderboard.md](organisatie/leaderboard.md) |
+| LAN-portaal (ex-leaderboard) | Kyell | Jules | Bezig | Vervangen door [kyell182/lan-portaal](https://github.com/kyell182/lan-portaal) |
 | Stream (optioneel) | Jules |  | Nog te starten | Privacytoestemming voorzien |
 | Evaluatie | Kyell + Jules |  | Nog te starten | Eind oktober |
 
@@ -164,7 +164,7 @@ De evenementdatum is **donderdag 22 oktober 2026, 18:00–24:00** (vastgelegd). 
 | 16 oktober | Gate 1 (Concept) bespreken met Leroy; team definitief Kyell + Jules |
 | 17–18 oktober | Netwerk-, stroom-, lokaal- en veiligheidsplan bevestigen; IEEE afstemming (gates, capaciteit, bewijsstukken) |
 | Week 17 | Laboproef met de 8 scenario's; SLO-drempelwaarden vastleggen (Kyell) |
-| Week 16–17 | Leaderboard: technologie kiezen en opzetten (Jules) |
+| Week 16–17 | Leaderboard: oorspronkelijke Python-opzet (Jules) — vervangen door het [LAN-portaal](https://github.com/kyell182/lan-portaal) van Kyell |
 | 20 oktober | Alle 5 gates gesloten en geregistreerd in het logboek |
 | 21 oktober | Opbouw in Stuvo, dry-run met meerdere clients, formele go/no-go (Gate 5) |
 | **22 oktober** | Uitvoering (18:00–24:00), incidentregistratie en cleanup |

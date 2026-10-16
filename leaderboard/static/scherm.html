@@ -38,7 +38,7 @@
   tbody tr:nth-child(even) { background: #192342; }
   td.pos { color: var(--sub); width: 3em; }
   td.naam { font-weight: 600; }
-  td.waarde, td.score, td.bestegame { text-align: right; font-variant-numeric: tabular-nums; }
+  td.waarde, td.score, td.bestegame { text-align: left; font-variant-numeric: tabular-nums; }
   .top1 td { color: var(--goud); font-weight: 700; }
   .top2 td { color: var(--zilver); font-weight: 700; }
   .top3 td { color: var(--bron); font-weight: 700; }
@@ -49,17 +49,17 @@
 </head>
 <body>
 <header>
-  <h1>LAN-PARTY <span>26</span> — LEADERBOARD</h1>
+  <h1><span>LAN</span>-PARTY <span>26</span> LEADERBOARD</h1>
   <div id="status">loading…</div>
 </header>
 <main>
   <section class="paneel">
-    <h2>Total Standings</h2>
+    <h2>High Scores</h2>
     <table id="totaal-tabel">
       <thead><tr><th>#</th><th>Player</th><th>Score</th><th>Best Game</th></tr></thead>
       <tbody></tbody>
     </table>
-    <div class="leeg" id="totaal-leeg">No scores yet — be the first!</div>
+    <div class="leeg" id="totaal-leeg">No scores yet.</div>
   </section>
   <section class="games" id="games"></section>
 </main>

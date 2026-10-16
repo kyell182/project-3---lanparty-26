@@ -4,7 +4,7 @@
 
 ## Fase 1 — Voorbereiding (15/10 → 20/10)
 
-Doel: alle vijf de gates gesloten vóór 20/10, laboproef uitgevoerd, leaderboard gestart.
+Doel: alle vijf de gates gesloten vóór 20/10, laboproef uitgevoerd, LAN-portaal gestart.
 
 | # | Taak | Eigenaar | Deadline | Gate | Status |
 |---|---|---|---|---|---|
@@ -17,8 +17,8 @@ Doel: alle vijf de gates gesloten vóór 20/10, laboproef uitgevoerd, leaderboar
 | 1.7 | SLO-drempelwaarden voor latency/packet loss vastleggen tijdens de laboproef | Kyell | 20/10 | Gate 3 | ☐ |
 | 1.8 | Caching: hit/miss, DNS-impact, opslag en fallback testen | Kyell | 20/10 | Gate 3 | ☐ |
 | 1.9 | Communicatiepakket (via IEEE-inschrijving): privacytekst, gedragscode, toestemmingen checken | Jules | 19/10 | Gate 4 | ☐ |
-| 1.10 | Leaderboard: technologie kiezen en opzetten in Stuvo-minimale infra | Jules | 20/10 | Gate 3 + 4 | ☐ |
-| 1.11 | Privacy-notitie leaderboard afronden (pseudoniem, lokaal bewaren, verwijderen na event) | Jules | 19/10 | Gate 4 | ☐ |
+| 1.10 | LAN-portaal: opzetten in Stuvo-minimale infra (Docker, offline) — vervangt de oorspr. Python-leaderboard ([kyell182/lan-portaal](https://github.com/kyell182/lan-portaal)) | Kyell | 20/10 | Gate 3 + 4 | ☐ |
+| 1.11 | Privacy-notitie LAN-portaal afronden (pseudoniem, lokaal bewaren, verwijderen na event) | Jules | 19/10 | Gate 4 | ☐ |
 | 1.12 | VR-opstelling (Pico 4 / Quake3Quest) afwerken: installatie, test, casting-uitvallen | Jules | 20/10 | Gate 5 | ☐ |
 | 1.13 | RetroPie en Arduino-controller testen op de eventhardware | Kyell | 20/10 | Gate 5 | ☐ |
 | 1.14 | Alle vijf gates registeren in het [logboek](logboek.md) met bewijs | Kyell | 20/10 | Gate 1–5 | ☐ |
@@ -30,11 +30,11 @@ Voorafgaande dag (21/10): opbouw in Stuvo; dry-run met meerdere clients; formele
 
 | # | Taak | Eigenaar | Tijdstip | Status |
 |---|---|---|---|---|
-| 2.1 | Opbouw: netwerk, kabels, stroom, schermen, leaderboard | Kyell + Jules + crew | 21/10, vanaf 15:00 | ☐ |
+| 2.1 | Opbouw: netwerk, kabels, stroom, schermen, LAN-portaal | Kyell + Jules + crew | 21/10, vanaf 15:00 | ☐ |
 | 2.2 | Dry-run: 8 scenario's op de eventhardware, monitoring live | Kyell | 21/10, 17:00–19:00 | ☐ |
 | 2.3 | Formele go/no-go registreren in [logboek](logboek.md) | Kyell + Jules | 21/10, 19:00 | ☐ |
 | 2.4 | Deelnemers onthaal en aansluiting (via IEEE-registratielijst) | Jules + crew | 22/10, 18:00 | ☐ |
-| 2.5 | Leaderboard live: resultaten invoer en weergave op scherm | Jules | 22/10, gedurende event | ☐ |
+| 2.5 | LAN-portaal live: toernooien/resultaten invoeren, live brackets en scoreboard op scherm | Kyell | 22/10, gedurende event | ☐ |
 | 2.6 | VR-sessies (Pico 4 / Quake3Quest) | Jules + crew | 22/10, gedurende event | ☐ |
 | 2.7 | Servicedesk: triage, gekende problemen, escalatiepad | Kyell + Jules + crew | 22/10, gedurende event | ☐ |
 | 2.8 | Monitoring actief houden; incidentlog bijhouden | Kyell | 22/10, gedurende event | ☐ |

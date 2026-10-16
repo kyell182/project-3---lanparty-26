@@ -27,7 +27,7 @@ Er is maximaal één **A** per taak. **C** en **I** zijn leeggelaten waar geen r
 | Stroomplan en elektriciteit | C | A/R | I | I | — | C | C | — | — |
 | Netwerkontwerp en bekabeling | A/R | C | I | — | — | — | — | C | — |
 | Cachingserver (Steam) | A/R | I | I | — | — | — | — | C | — |
-| Leaderboard | C | A/R | I | I | — | — | — | C | I |
+| LAN-portaal (ex-leaderboard) | A/R | C | I | I | — | — | — | C | I |
 | VR / Pico 4 (Quake3Quest) | C | A/R | I | — | — | — | — | — | I |
 | RetroPie op minipc | A/R | — | I | — | — | — | — | — | — |
 | Arduino-controller (entertainment) | A/R | — | I | — | — | — | — | — | — |
@@ -50,7 +50,7 @@ Er is maximaal één **A** per taak. **C** en **I** zijn leeggelaten waar geen r
 - **Stuvo** (de locatie), **gebouwbeheer**, **preventie** en **IT/netwerkbeheer** zijn Consulted of Informed; hun formele goedkeuring is verplicht vóór de bijbehorende gate.
 - **Deelnemers** worden enkel geïnformeerd; zij nemen geen beslissingsrol in het project.
 - **Kyell** is projectcoördinator en Accountable voor projectsturing, netwerk, caching, RetroPie, Arduino, monitoring en de laboproef.
-- **Jules** is Accountable voor de inrichting en uitvoering in Stuvo, stroom, de **leaderboard**, de **VR-opstelling (Pico 4 / Quake3Quest)**, inschrijving, privacy, communicatie en gedragscode.
+- **Jules** is Accountable voor de inrichting en uitvoering in Stuvo, stroom, de **VR-opstelling (Pico 4 / Quake3Quest)**, inschrijving, privacy, communicatie en gedragscode. (Het **LAN-portaal** — oorspr. de leaderboard — is Accountable: **Kyell**; zie [lan-portaal](https://github.com/kyell182/lan-portaal).)
 - Rollen kunnen nog wijzigen bij verandering van de taakverdeling; bij elke verandering wordt deze matrix bijgewerkt en in het [logboek](logboek.md) gelogd.
 
 ## Openstaande punten
