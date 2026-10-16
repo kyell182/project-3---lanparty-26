@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LAN Admin — Leaderboard</title>
+<style>
+  :root {
+    --bg: #0b0f1f;
+    --pane: #151c33;
+    --rand: #2f3d63;
+    --accent: #22d3ee;
+    --goud: #ffc400;
+    --groen: #22e07c;
+    --rood: #ff4d6d;
+    --text: #eef2ff;
+    --sub: #94a0c0;
+    --radius: 4px;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text);
+    font-family: "Segoe UI", system-ui, sans-serif; }
+  header { display: flex; justify-content: space-between; align-items: center;
+    padding: 14px 24px; border-bottom: 2px solid var(--accent);
+    background: linear-gradient(90deg, #101733, #0b0f1f); }
+  header h1 { font-size: 1.3rem; margin: 0; letter-spacing: .5px; }
+  header h1 span { color: var(--accent); }
+  main { max-width: 1100px; margin: 0 auto; padding: 20px 24px 40px; display: grid; gap: 20px; }
+  section { background: var(--pane); border: 1px solid var(--rand); border-radius: var(--radius);
+    padding: 18px 22px; }
+  section h2 { margin: 0 0 14px; font-size: 1.05rem; color: var(--accent);
+    text-transform: uppercase; letter-spacing: 1px; }
+  label { display: block; margin: 10px 0 4px; font-size: .8rem; color: var(--sub);
+    text-transform: uppercase; letter-spacing: .5px; }
+  input, select { width: 100%; padding: 9px 10px; background: #0b0f1f; color: var(--text);
+    border: 1px solid var(--rand); border-radius: 2px; font-size: 1rem; }
+  input:focus, select:focus { outline: none; border-color: var(--accent);
+    box-shadow: 0 0 0 1px var(--accent); }
+  button { padding: 9px 16px; margin: 0; background: var(--accent); color: #04121a;
+    border: 0; border-radius: 2px; font-size: .95rem; font-weight: 700; cursor: pointer; }
+  button:hover { filter: brightness(1.12); }
+  button.groen { background: var(--groen); color: #04140b; }
+  button.gevaar { background: var(--rood); color: #fff; }
+  button.klein { padding: 5px 10px; font-size: .8rem; margin: 0; }
+  .rij { display: grid; gap: 14px; }
+  .rij3 { grid-template-columns: 1.2fr 1.2fr 1fr auto; align-items: end; }
+  .duo { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  @media (max-width: 760px) { .duo { grid-template-columns: 1fr; } .rij3 { grid-template-columns: 1fr 1fr; } }
+  table { width: 100%; border-collapse: collapse; font-size: .95rem; }
+  th, td { padding: 7px 10px; text-align: left; border-bottom: 1px solid var(--rand); }
+  th { color: var(--sub); font-size: .75rem; text-transform: uppercase; letter-spacing: .5px; }
+  .klein { color: var(--sub); font-size: .85rem; }
+  #melding { padding: 10px 14px; border-radius: 2px; margin-bottom: 14px; display: none; }
+  #melding.ok { display: block; background: rgba(34,224,124,.15); color: var(--groen); border: 1px solid var(--groen); }
+  #melding.fout { display: block; background: rgba(255,77,109,.15); color: var(--rood); border: 1px solid var(--rood); }
+  .hist-waarde { font-weight: 700; }
+</style>
+</head>
+<body>
+<header>
+  <h1>LAN <span>Admin</span></h1>
+  <div>
+    <a class="klein" href="/" target="_blank" style="color:var(--sub);margin-right:14px">Screen ↗</a>
+    <button id="afmelden" class="gevaar">Log out</button>
+  </div>
+</header>
+
+<main>
+  <div id="melding"></div>
+
+  <section>
+    <h2>Enter Score</h2>
+    <div class="rij rij3">
+      <div>
+        <label for="game">Game</label>
+        <select id="game"></select>
+      </div>
+      <div>
+        <label for="speler">Player</label>
+        <select id="speler"></select>
+      </div>
+      <div>
+        <label for="waarde">Score (0–100)</label>
+        <input id="waarde" type="number" min="0" max="100" step="any" placeholder="0 - 100">
+      </div>
+      <button id="verzenden" class="groen">Add Score</button>
+    </div>
+  </section>
+
+  <div class="duo">
+    <section>
+      <h2>Players</h2>
+      <div class="rij" style="grid-template-columns:1fr auto;align-items:end">
+        <div>
+          <label for="nieuwe-speler">New player</label>
+          <input id="nieuwe-speler" placeholder="e.g. DarkKnight" maxlength="40">
+        </div>
+        <button id="speler-toevoegen">Add</button>
+      </div>
+      <table style="margin-top:14px">
+        <thead><tr><th>Player</th><th></th></tr></thead>
+        <tbody id="spelers-body"></tbody>
+      </table>
+      <div class="klein" id="spelers-leeg">No players yet — add one above or wait for self-registration.</div>
+    </section>
+
+    <section>
+      <h2>Games</h2>
+      <div class="rij" style="grid-template-columns:1fr auto;align-items:end">
+        <div>
+          <label for="nieuwe-game">New game</label>
+          <input id="nieuwe-game" placeholder="e.g. Fortnite" maxlength="60">
+        </div>
+        <button id="game-toevoegen">Add</button>
+      </div>
+      <table style="margin-top:14px">
+        <thead><tr><th>Game</th><th></th></tr></thead>
+        <tbody id="games-body"></tbody>
+      </table>
+      <div class="klein" id="games-leeg">No games yet.</div>
+    </section>
+  </div>
+
+  <section>
+    <h2>History (last 20)</h2>
+    <table>
+      <thead><tr><th>When</th><th>Player</th><th>Game</th><th>Score</th><th></th></tr></thead>
+      <tbody id="recent-body"></tbody>
+    </table>
+    <div class="klein" id="recent-leeg">No scores entered yet.</div>
+  </section>
+
+  <section style="border-color:var(--rood)">
+    <h2 style="color:var(--rood)">Danger Zone</h2>
+    <p class="klein">Removes <strong>all</strong> games, players and scores. For the day after the event (privacy: keep data &le; 1 week).</p>
+    <button class="gevaar" id="reset">Wipe All Data</button>
+  </section>
+</main>
+<script src="crew.js"></script>
+</body>
+</html>

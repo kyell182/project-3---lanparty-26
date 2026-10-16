@@ -1,0 +1,6 @@
+# Lokaal data-bestand: pseudoniemen + scores, te verwijderen na het event.
+data/leaderboard.json
+data/*.tmp
+# Crew-wachtwoord: nooit in de git-repo.
+config.json
+__pycache__/

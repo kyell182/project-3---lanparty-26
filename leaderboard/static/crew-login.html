@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LAN Admin — Login</title>
+<style>
+  :root {
+    --bg: #0b0f1f;
+    --pane: #151c33;
+    --rand: #2f3d63;
+    --accent: #22d3ee;
+    --text: #eef2ff;
+    --sub: #94a0c0;
+    --radius: 4px;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font-family: "Segoe UI", system-ui, sans-serif;
+    display: flex; align-items: center; justify-content: center; min-height: 100vh; }
+  .kaart { background: var(--pane); border: 1px solid var(--rand); border-radius: var(--radius);
+    padding: 32px 36px; width: min(380px, 92vw); }
+  h1 { font-size: 1.4rem; margin: 0 0 8px; text-transform: uppercase; letter-spacing: 1px; }
+  h1 span { color: var(--accent); }
+  p { color: var(--sub); font-size: .9rem; margin: 0 0 20px; }
+  input { width: 100%; padding: 12px 14px; background: #0b0f1f; color: var(--text);
+    border: 1px solid var(--rand); border-radius: 2px; font-size: 1rem; }
+  input:focus { outline: 2px solid var(--accent); border-color: transparent; }
+  button { width: 100%; margin-top: 16px; padding: 12px; background: var(--accent); color: #0b0f1f;
+    border: 0; border-radius: 2px; font-size: 1rem; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 1px; cursor: pointer; }
+  button:hover { filter: brightness(1.15); }
+  #melding { display: none; margin-top: 14px; padding: 10px 14px; border-radius: 2px;
+    font-size: .9rem; color: #ff4d6d; }
+</style>
+</head>
+<body>
+<div class="kaart">
+  <h1>LAN <span>Admin</span> — Login</h1>
+  <p>Enter the shared admin password. The session stays valid for 24 hours.</p>
+  <input id="wachtwoord" type="password" placeholder="Password" autocomplete="current-password">
+  <button id="aanmelden">Login</button>
+  <div id="melding"></div>
+</div>
+<script>
+document.getElementById("aanmelden").onclick = async () => {
+  const r = await fetch("/crew/aanmelden", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ wachtwoord: document.getElementById("wachtwoord").value }),
+  });
+  if (r.ok) location.href = "/crew";
+  else {
+    const m = document.getElementById("melding");
+    m.textContent = "Incorrect password.";
+    m.style.display = "block";
+  }
+};
+document.getElementById("wachtwoord").addEventListener("keydown", e => {
+  if (e.key === "Enter") document.getElementById("aanmelden").click();
+});
+document.getElementById("wachtwoord").focus();
+</script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LAN-Party 26 — Leaderboard</title>
+<style>
+  :root {
+    --bg: #0b0f1f;
+    --pane: #151c33;
+    --rand: #2f3d63;
+    --accent: #22d3ee;
+    --goud: #ffc400;
+    --zilver: #d4d9e2;
+    --bron: #ff8c42;
+    --text: #eef2ff;
+    --sub: #94a0c0;
+    --radius: 4px;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text);
+    font-family: "Segoe UI", system-ui, sans-serif; }
+  header { display: flex; justify-content: space-between; align-items: baseline;
+    padding: 18px 32px 10px; border-bottom: 2px solid var(--accent);
+    background: linear-gradient(90deg, #101733, #0b0f1f); }
+  header h1 { margin: 0; font-size: 2.4rem; letter-spacing: .05em; }
+  header h1 span { color: var(--accent); }
+  #status { font-size: 1rem; color: var(--sub); }
+  main { display: grid; grid-template-columns: 5fr 7fr; gap: 24px; padding: 12px 32px 32px; }
+  .paneel { background: var(--pane); border: 1px solid var(--rand);
+    border-radius: var(--radius); overflow: hidden; }
+  .paneel h2 { margin: 0; padding: 16px 24px; font-size: 1.5rem;
+    border-bottom: 2px solid var(--accent); color: var(--accent);
+    text-transform: uppercase; letter-spacing: 1px; }
+  table { width: 100%; border-collapse: collapse; }
+  th, td { padding: 10px 24px; text-align: left; font-size: 1.25rem; }
+  thead th { color: var(--sub); font-size: 1rem; text-transform: uppercase; letter-spacing: .08em; }
+  tbody tr:nth-child(even) { background: #192342; }
+  td.pos { color: var(--sub); width: 3em; }
+  td.naam { font-weight: 600; }
+  td.waarde, td.score, td.bestegame { text-align: right; font-variant-numeric: tabular-nums; }
+  .top1 td { color: var(--goud); font-weight: 700; }
+  .top2 td { color: var(--zilver); font-weight: 700; }
+  .top3 td { color: var(--bron); font-weight: 700; }
+  .games { display: flex; flex-direction: column; gap: 24px; }
+  .leeg { padding: 24px; color: var(--sub); font-size: 1.1rem; }
+  @media (max-width: 1000px) { main { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<header>
+  <h1>LAN-PARTY <span>26</span> — LEADERBOARD</h1>
+  <div id="status">loading…</div>
+</header>
+<main>
+  <section class="paneel">
+    <h2>Total Standings</h2>
+    <table id="totaal-tabel">
+      <thead><tr><th>#</th><th>Player</th><th>Score</th><th>Best Game</th></tr></thead>
+      <tbody></tbody>
+    </table>
+    <div class="leeg" id="totaal-leeg">No scores yet — be the first!</div>
+  </section>
+  <section class="games" id="games"></section>
+</main>
+<script>
+const VOORVAL_S = 3; // elke paar seconden verversen
+
+async function ververs() {
+  try {
+    const r = await fetch("/api/data", { cache: "no-store" });
+    const d = await r.json();
+    document.getElementById("status").textContent =
+      "updated " + new Date().toLocaleTimeString("en-GB");
+    tekenTotaal(d.totaal);
+    tekenGames(d.games);
+  } catch {
+    document.getElementById("status").textContent = "connection lost…";
+  }
+}
+
+function klasse(pos) {
+  return pos === 1 ? "top1" : pos === 2 ? "top2" : pos === 3 ? "top3" : "";
+}
+
+function tekenTotaal(lijst) {
+  const tb = document.querySelector("#totaal-tabel tbody");
+  document.getElementById("totaal-leeg").style.display = lijst.length ? "none" : "";
+  tb.innerHTML = lijst.map((s, i) => `
+    <tr class="${klasse(i + 1)}">
+      <td class="pos">${i + 1}</td>
+      <td class="naam">${escapeHtml(s.naam)}</td>
+      <td class="score">${Number(s.totaal).toLocaleString("en-GB")}</td>
+      <td class="bestegame">${s.beste_game ? escapeHtml(s.beste_game) : "—"}</td>
+    </tr>`).join("");
+}
+
+function tekenGames(games) {
+  const container = document.getElementById("games");
+  if (!games.length) {
+    container.innerHTML = `<div class="paneel"><h2>Games</h2><div class="leeg">No games added yet.</div></div>`;
+    return;
+  }
+  container.innerHTML = games.map(g => `
+    <section class="paneel">
+      <h2>${escapeHtml(g.naam)} <small style="color:var(--sub);font-size:.9rem">— total 0-100 scores</small></h2>
+      ${g.top.length
+        ? `<table><thead><tr><th>#</th><th>Player</th><th>Score</th></tr></thead>
+           <tbody>${g.top.map((s, i) => `
+            <tr class="${klasse(i + 1)}">
+              <td class="pos">${i + 1}</td>
+              <td class="naam">${escapeHtml(s.naam)}</td>
+              <td class="waarde">${Number(s.waarde).toLocaleString("en-GB")}</td>
+            </tr>`).join("")}</tbody></table>`
+        : `<div class="leeg">No scores.</div>`}
+    </section>`).join("");
+}
+
+function escapeHtml(s) {
+  return String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+}
+
+ververs();
+setInterval(ververs, VOORVAL_S * 1000);
+</script>
+</body>
+</html>
