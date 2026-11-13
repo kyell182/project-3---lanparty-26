@@ -1,5 +1,5 @@
 # Gevoelige bestanden / credentials
-retro/credentials.md
+arcade/credentials.md
 
 # Geheimen van de monitoringstack (alleen .env.example mag in git)
 .env
@@ -14,3 +14,6 @@ desktop.ini
 .idea/
 .vscode/
 
+
+# Inloggegevens van het project (root)
+/credentials.md

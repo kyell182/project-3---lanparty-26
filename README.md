@@ -22,7 +22,8 @@ graph TD
     M["monitoring<br/>Docker-stack met dashboard"]
     D["draaiboek<br/>organisatie door VIVES"]
     G["docs<br/>opdracht en begrippenlijst"]
-    A["activiteiten<br/>VR, RetroPie en lay-out"]
+    A["activiteiten<br/>VR en lay-out"]
+    C["arcade<br/>zijproject: arcadekast met RetroPie"]
 
     R --> O
     R --> P
@@ -32,6 +33,7 @@ graph TD
     L --> D
     M --> D
     R --> A
+    R --> C
     G -.->|"uitleg van vaktermen"| N
     G -.-> L
     G -.-> M
@@ -139,7 +141,7 @@ Vul de namen aan en wijs voor elke taak een verantwoordelijke en eventueel een b
 | Netwerk en bekabeling | Kyell | Jules | Bezig | Netwerkontwerp, DHCP/routing |
 | Cachingserver | Kyell |  | Bezig | Hit/miss, DNS-impact, opslag en fallback testen |
 | VR / Pico 4 (Quake3Quest) | Jules |  | Bezig | Overgenomen na vertrek van Jason |
-| RetroPie en minicomputer | Kyell |  | Bezig | Testen op eventhardware |
+| RetroPie en minicomputer | Kyell |  | Bezig | Testen op eventhardware; zie [arcade/](arcade/README.md) |
 | Arduino-controller | Kyell |  | Bezig | Mogelijkheden onderzoeken |
 | Games en toernooien | Jules | Kyell | Bezig | LAN-portaal volgt de toernooirondes |
 | Boardgames en nevenactiviteiten | Jules |  | Afgevaardigd | Geen boardgames, enkel video games |
@@ -223,14 +225,20 @@ Het project wordt geëvalueerd aan de hand van:
 │   ├── telegraf/                      Configuratie van de verzamelaar
 │   ├── grafana/                       Dashboard, alarmen en datasource
 │   └── lan-70/                        Ingevulde variant voor de LAN van 70
-└── activiteiten/                      Bijdragen aan de LAN-party
-    ├── concepten.md                   Eerste ideeën en taakverdeling
-    ├── layout-lan-party.pdf           Indeling Stuvo met netwerkkasten, kranen en stroompunten
-    ├── vr-pico4/
-    │   └── vr-setup-concept.md        VR met Pico 4 / Quake3Quest
-    └── retropie/
-        ├── installatie-retropie.md    Arcadekast op minipc (credentials.md gitignored)
-        └── assets/                    Afbeeldingen voor de installatiehandleiding
+├── activiteiten/                      Bijdragen aan de LAN-party
+│   ├── concepten.md                   Eerste ideeën en taakverdeling
+│   ├── layout-lan-party.pdf           Indeling Stuvo met netwerkkasten, kranen en stroompunten
+│   └── vr-pico4/
+│       └── vr-setup-concept.md        VR met Pico 4 / Quake3Quest
+└── arcade/                            Zijproject: arcadekast met RetroPie (eigen README)
+    ├── README.md                      Status, todo en overzicht van de handleidingen
+    ├── installatie-retropie.md        Installatie van RetroPie op een pc
+    ├── bestanden-kopieren.md          Bestanden via scp, zip-regels
+    ├── controllers.md                 Controllers en configuratiemenu
+    ├── emulators.md                   Tabel per systeem
+    ├── scherm-en-autostart.md         Autostart en schermscript
+    ├── scripts/                       Kopie van scripts op de arcade-pc
+    └── assets/                        Afbeeldingen (credentials.md gitignored)
 ```
 
 Projectdocumenten en bewijsstukken worden toegevoegd zodra ze zijn uitgewerkt en goedgekeurd. Denk hierbij aan de RACI-matrix, begroting, risicoanalyse, netwerkdiagram, IP- en bandbreedteplan, cachebenchmark, privacy- en communicatieplan, gedragscode, draaiboek, servicedeskprocedure, incidentlog en evaluatierapport.

@@ -1,10 +1,19 @@
-# installatie van retropi op pc ( handleiding )
+﻿# installatie van retropi op pc ( handleiding )
 
 ## doelstelling
 
 een pc ombouwen naar een functionele werkende arcade kast met retropi-software.
 
 deze handleiding is bedoeld voor mensen die een pc willen ombouwen naar een arcade kast met retropi-software. Het doel is om een overzicht te geven van de stappen die nodig zijn om dit proces succesvol te voltooien.
+
+## overzicht van de handleidingen
+
+```mermaid
+flowchart LR
+    A["1. Installatie<br/>(deze handleiding)"] --> B["2. Games kopiëren<br/>bestanden-kopieren.md"]
+    B --> C["3. Controllers en menu's<br/>controllers.md"]
+    C --> D["4. Arduino mini + vaste knoppen<br/>nog te schrijven"]
+```
 
 ## benodigdheden
 
@@ -112,6 +121,13 @@ deze handleiding is bedoeld voor mensen die een pc willen ombouwen naar een arca
     ---
 
 7. na de installatie, ga naar config/tools daarna naar autostart en daar moet je dit enabelen herstart de pc en log opnieuw in. Retropi zou nu automatisch moeten starten.
+
+---
+
+## volgende stappen
+
+- games en BIOS-bestanden op de pc zetten: [bestanden-kopieren.md](bestanden-kopieren.md)
+- controllers instellen en het menu afschermen: [controllers.md](controllers.md)
 
 ---
 

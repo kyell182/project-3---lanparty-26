@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Name=Display Switcher Hotplug
+Exec=/usr/bin/python3 /home/vives-arcade/.config/display-switch.py
+X-GNOME-Autostart-enabled=true
